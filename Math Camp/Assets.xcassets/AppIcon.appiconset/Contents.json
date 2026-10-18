@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "math_camp_icon.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
