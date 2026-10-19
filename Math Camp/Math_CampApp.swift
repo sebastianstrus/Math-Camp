@@ -6,12 +6,24 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Math_CampApp: App {
+    @State private var premium = PremiumAccess()
+
+    init() {
+        #if DEBUG
+        Task.detached(priority: .utility) { ContentValidator.logResults() }
+        #endif
+    }
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
+                .environment(premium)
+                .preferredColorScheme(.dark)
         }
+        .modelContainer(for: TaskResult.self)
     }
 }

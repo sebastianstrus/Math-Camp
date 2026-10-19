@@ -1,0 +1,5131 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "": {},
+    "answer.false": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "False"
+          }
+        }
+      }
+    },
+    "answer.true": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "True"
+          }
+        }
+      }
+    },
+    "calendar.q.daysInMonth": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many days are in %@?"
+          }
+        }
+      }
+    },
+    "calendar.q.daysInWeeks": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many days are in %lld week?"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many days are in %lld weeks?"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calendar.q.hoursInDays": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many hours are in %lld day?"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many hours are in %lld days?"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calendar.q.minutesInHours": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many minutes are in %lld hour?"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many minutes are in %lld hours?"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calendar.q.monthNumber": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which number is the month %@? January is number 1."
+          }
+        }
+      }
+    },
+    "calendar.q.monthsInYears": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many months are in %lld year?"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many months are in %lld years?"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calendar.q.weeksInDays": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many weeks are %lld day?"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "How many weeks are %lld days?"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "category.s1.add10.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add small numbers with sums up to 10."
+          }
+        }
+      }
+    },
+    "category.s1.add10.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addition to 10"
+          }
+        }
+      }
+    },
+    "category.s1.add20.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add numbers with sums up to 20."
+          }
+        }
+      }
+    },
+    "category.s1.add20.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addition to 20"
+          }
+        }
+      }
+    },
+    "category.s1.addacross10.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add and cross the 10."
+          }
+        }
+      }
+    },
+    "category.s1.addacross10.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adding Across 10"
+          }
+        }
+      }
+    },
+    "category.s1.compare.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which number is bigger? Use <, = or >."
+          }
+        }
+      }
+    },
+    "category.s1.compare.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare Numbers"
+          }
+        }
+      }
+    },
+    "category.s1.counting.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count the objects and type how many."
+          }
+        }
+      }
+    },
+    "category.s1.counting.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Counting Objects"
+          }
+        }
+      }
+    },
+    "category.s1.make10.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the missing part of 10."
+          }
+        }
+      }
+    },
+    "category.s1.make10.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make 10"
+          }
+        }
+      }
+    },
+    "category.s1.missing.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the number that makes it true."
+          }
+        }
+      }
+    },
+    "category.s1.missing.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missing Number"
+          }
+        }
+      }
+    },
+    "category.s1.numberline.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place and read numbers on a number line."
+          }
+        }
+      }
+    },
+    "category.s1.numberline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number Line to 20"
+          }
+        }
+      }
+    },
+    "category.s1.patterns.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the missing number in the pattern."
+          }
+        }
+      }
+    },
+    "category.s1.patterns.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number Patterns"
+          }
+        }
+      }
+    },
+    "category.s1.sub10.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtract within 10."
+          }
+        }
+      }
+    },
+    "category.s1.sub10.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtraction to 10"
+          }
+        }
+      }
+    },
+    "category.s1.subacross10.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtract and cross the 10."
+          }
+        }
+      }
+    },
+    "category.s1.subacross10.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtracting Across 10"
+          }
+        }
+      }
+    },
+    "category.s1.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read short stories and solve them."
+          }
+        }
+      }
+    },
+    "category.s1.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems to 20"
+          }
+        }
+      }
+    },
+    "category.s2.addnoregroup.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add two-digit numbers without carrying."
+          }
+        }
+      }
+    },
+    "category.s2.addnoregroup.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addition (no regrouping)"
+          }
+        }
+      }
+    },
+    "category.s2.addregroup.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add two-digit numbers with carrying."
+          }
+        }
+      }
+    },
+    "category.s2.addregroup.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Addition with Regrouping"
+          }
+        }
+      }
+    },
+    "category.s2.addtens.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add whole tens to a number."
+          }
+        }
+      }
+    },
+    "category.s2.addtens.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adding Tens"
+          }
+        }
+      }
+    },
+    "category.s2.brackets.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solve what is inside the brackets first."
+          }
+        }
+      }
+    },
+    "category.s2.brackets.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Brackets"
+          }
+        }
+      }
+    },
+    "category.s2.compare.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare numbers up to 100."
+          }
+        }
+      }
+    },
+    "category.s2.compare.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare to 100"
+          }
+        }
+      }
+    },
+    "category.s2.missing.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the missing number up to 100."
+          }
+        }
+      }
+    },
+    "category.s2.missing.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missing Number to 100"
+          }
+        }
+      }
+    },
+    "category.s2.numberline.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place and read numbers up to 100."
+          }
+        }
+      }
+    },
+    "category.s2.numberline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number Line to 100"
+          }
+        }
+      }
+    },
+    "category.s2.placevalue.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split numbers into tens and ones."
+          }
+        }
+      }
+    },
+    "category.s2.placevalue.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tens and Ones"
+          }
+        }
+      }
+    },
+    "category.s2.skipcount.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Count by 2, 5, 10 and more."
+          }
+        }
+      }
+    },
+    "category.s2.skipcount.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip Counting"
+          }
+        }
+      }
+    },
+    "category.s2.subnoregroup.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtract without borrowing."
+          }
+        }
+      }
+    },
+    "category.s2.subnoregroup.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtraction (no regrouping)"
+          }
+        }
+      }
+    },
+    "category.s2.subregroup.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtract with borrowing."
+          }
+        }
+      }
+    },
+    "category.s2.subregroup.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subtraction with Regrouping"
+          }
+        }
+      }
+    },
+    "category.s2.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solve stories with numbers up to 100."
+          }
+        }
+      }
+    },
+    "category.s2.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems to 100"
+          }
+        }
+      }
+    },
+    "category.s3.division.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Divide with no remainder."
+          }
+        }
+      }
+    },
+    "category.s3.division.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Division Facts"
+          }
+        }
+      }
+    },
+    "category.s3.groups.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "See equal groups and turn them into multiplication."
+          }
+        }
+      }
+    },
+    "category.s3.groups.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equal Groups"
+          }
+        }
+      }
+    },
+    "category.s3.missingfactor.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the missing number in a multiplication."
+          }
+        }
+      }
+    },
+    "category.s3.missingfactor.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Missing Factor"
+          }
+        }
+      }
+    },
+    "category.s3.order.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiply and divide before you add and subtract."
+          }
+        }
+      }
+    },
+    "category.s3.order.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Order of Operations"
+          }
+        }
+      }
+    },
+    "category.s3.remainder.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Divide and find what is left."
+          }
+        }
+      }
+    },
+    "category.s3.remainder.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Division with Remainder"
+          }
+        }
+      }
+    },
+    "category.s3.tables2510.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice the 2, 5 and 10 times tables."
+          }
+        }
+      }
+    },
+    "category.s3.tables2510.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Times Tables 2, 5, 10"
+          }
+        }
+      }
+    },
+    "category.s3.tables34.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice the 3 and 4 times tables."
+          }
+        }
+      }
+    },
+    "category.s3.tables34.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Times Tables 3, 4"
+          }
+        }
+      }
+    },
+    "category.s3.tables69.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice the 6, 7, 8 and 9 times tables."
+          }
+        }
+      }
+    },
+    "category.s3.tables69.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Times Tables 6–9"
+          }
+        }
+      }
+    },
+    "category.s3.tablesmixed.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All the times tables mixed together."
+          }
+        }
+      }
+    },
+    "category.s3.tablesmixed.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mixed Times Tables"
+          }
+        }
+      }
+    },
+    "category.s3.times10100.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiply and divide by 10 and 100."
+          }
+        }
+      }
+    },
+    "category.s3.times10100.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiply by 10 and 100"
+          }
+        }
+      }
+    },
+    "category.s3.truefalse.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is the answer right or wrong?"
+          }
+        }
+      }
+    },
+    "category.s3.truefalse.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "True or False"
+          }
+        }
+      }
+    },
+    "category.s3.twodigit.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiply a two-digit number by a one-digit number."
+          }
+        }
+      }
+    },
+    "category.s3.twodigit.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2-Digit × 1-Digit"
+          }
+        }
+      }
+    },
+    "category.s3.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories about groups and sharing."
+          }
+        }
+      }
+    },
+    "category.s3.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems: Groups & Sharing"
+          }
+        }
+      }
+    },
+    "category.s4.add3digit.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add and subtract three-digit numbers."
+          }
+        }
+      }
+    },
+    "category.s4.add3digit.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "3-Digit Addition and Subtraction"
+          }
+        }
+      }
+    },
+    "category.s4.column.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add and subtract in columns."
+          }
+        }
+      }
+    },
+    "category.s4.column.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Column Addition and Subtraction"
+          }
+        }
+      }
+    },
+    "category.s4.columnmult.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiply in columns."
+          }
+        }
+      }
+    },
+    "category.s4.columnmult.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Column Multiplication"
+          }
+        }
+      }
+    },
+    "category.s4.compare.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare numbers up to 10,000."
+          }
+        }
+      }
+    },
+    "category.s4.compare.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare Big Numbers"
+          }
+        }
+      }
+    },
+    "category.s4.estimation.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Round first, then estimate the answer."
+          }
+        }
+      }
+    },
+    "category.s4.estimation.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimation"
+          }
+        }
+      }
+    },
+    "category.s4.hundreds.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Split numbers into hundreds, tens and ones."
+          }
+        }
+      }
+    },
+    "category.s4.hundreds.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hundreds, Tens and Ones"
+          }
+        }
+      }
+    },
+    "category.s4.longdiv.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Divide bigger numbers and find the remainder."
+          }
+        }
+      }
+    },
+    "category.s4.longdiv.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Long Division"
+          }
+        }
+      }
+    },
+    "category.s4.multistep.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solve longer expressions step by step."
+          }
+        }
+      }
+    },
+    "category.s4.multistep.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multi-Step Expressions"
+          }
+        }
+      }
+    },
+    "category.s4.numberline.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place and read numbers on a line up to 1,000."
+          }
+        }
+      }
+    },
+    "category.s4.numberline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number Line to 1000"
+          }
+        }
+      }
+    },
+    "category.s4.rounding.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Round numbers to the nearest ten, hundred or thousand."
+          }
+        }
+      }
+    },
+    "category.s4.rounding.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rounding"
+          }
+        }
+      }
+    },
+    "category.s4.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories with big numbers."
+          }
+        }
+      }
+    },
+    "category.s4.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems"
+          }
+        }
+      }
+    },
+    "category.s5.adddecimals.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add and subtract decimals."
+          }
+        }
+      }
+    },
+    "category.s5.adddecimals.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adding Decimals"
+          }
+        }
+      }
+    },
+    "category.s5.addfractions.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add and subtract fractions."
+          }
+        }
+      }
+    },
+    "category.s5.addfractions.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adding Fractions"
+          }
+        }
+      }
+    },
+    "category.s5.comparedecimals.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which decimal is bigger?"
+          }
+        }
+      }
+    },
+    "category.s5.comparedecimals.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare Decimals"
+          }
+        }
+      }
+    },
+    "category.s5.comparefractions.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which fraction is bigger?"
+          }
+        }
+      }
+    },
+    "category.s5.comparefractions.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compare Fractions"
+          }
+        }
+      }
+    },
+    "category.s5.decimalline.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place and read decimals on a number line."
+          }
+        }
+      }
+    },
+    "category.s5.decimalline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decimals on a Number Line"
+          }
+        }
+      }
+    },
+    "category.s5.equivalent.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find fractions that are worth the same."
+          }
+        }
+      }
+    },
+    "category.s5.equivalent.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equivalent Fractions"
+          }
+        }
+      }
+    },
+    "category.s5.fractionline.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Place and read fractions on a number line."
+          }
+        }
+      }
+    },
+    "category.s5.fractionline.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fractions on a Number Line"
+          }
+        }
+      }
+    },
+    "category.s5.fractionof.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find a fraction of a number."
+          }
+        }
+      }
+    },
+    "category.s5.fractionof.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fraction of a Number"
+          }
+        }
+      }
+    },
+    "category.s5.fractionpics.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read the fraction shown in a picture."
+          }
+        }
+      }
+    },
+    "category.s5.fractionpics.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fractions in Pictures"
+          }
+        }
+      }
+    },
+    "category.s5.percent.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find a percentage of a number."
+          }
+        }
+      }
+    },
+    "category.s5.percent.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simple Percentages"
+          }
+        }
+      }
+    },
+    "category.s5.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories with fractions and percentages."
+          }
+        }
+      }
+    },
+    "category.s5.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems"
+          }
+        }
+      }
+    },
+    "category.s6.calendar.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Days, weeks, months and years."
+          }
+        }
+      }
+    },
+    "category.s6.calendar.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calendar"
+          }
+        }
+      }
+    },
+    "category.s6.intervals.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many minutes pass between two times?"
+          }
+        }
+      }
+    },
+    "category.s6.intervals.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time Intervals"
+          }
+        }
+      }
+    },
+    "category.s6.length.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convert and compare lengths."
+          }
+        }
+      }
+    },
+    "category.s6.length.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Length"
+          }
+        }
+      }
+    },
+    "category.s6.massvolume.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convert and compare mass and volume."
+          }
+        }
+      }
+    },
+    "category.s6.massvolume.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mass and Volume"
+          }
+        }
+      }
+    },
+    "category.s6.time.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read the time on a clock."
+          }
+        }
+      }
+    },
+    "category.s6.time.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telling Time"
+          }
+        }
+      }
+    },
+    "category.s6.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stories about time and measures."
+          }
+        }
+      }
+    },
+    "category.s6.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems"
+          }
+        }
+      }
+    },
+    "category.s7.balance.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the missing weight to balance the scale."
+          }
+        }
+      }
+    },
+    "category.s7.balance.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balance Scales"
+          }
+        }
+      }
+    },
+    "category.s7.equations.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the unknown number x."
+          }
+        }
+      }
+    },
+    "category.s7.equations.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Equations"
+          }
+        }
+      }
+    },
+    "category.s7.magic.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every row, column and diagonal has the same sum."
+          }
+        }
+      }
+    },
+    "category.s7.magic.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Magic Squares"
+          }
+        }
+      }
+    },
+    "category.s7.negatives.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numbers below zero."
+          }
+        }
+      }
+    },
+    "category.s7.negatives.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Negative Numbers"
+          }
+        }
+      }
+    },
+    "category.s7.patterns.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the rule and the missing number."
+          }
+        }
+      }
+    },
+    "category.s7.patterns.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Patterns"
+          }
+        }
+      }
+    },
+    "category.s7.truefalsemix.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Is the statement true or false?"
+          }
+        }
+      }
+    },
+    "category.s7.truefalsemix.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "True or False Mix"
+          }
+        }
+      }
+    },
+    "category.s7.words.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Puzzle stories."
+          }
+        }
+      }
+    },
+    "category.s7.words.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Word Problems"
+          }
+        }
+      }
+    },
+    "clock.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Clock face"
+          }
+        }
+      }
+    },
+    "common.close": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Close"
+          }
+        }
+      }
+    },
+    "common.comingSoon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coming soon"
+          }
+        }
+      }
+    },
+    "count.object.accessibility": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Object"
+          }
+        }
+      }
+    },
+    "estimate.prefix": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estimate, rounding to %lld:"
+          }
+        }
+      }
+    },
+    "fractionPicture.accessibility %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A picture divided into %lld equal parts. Some parts are shaded."
+          }
+        }
+      }
+    },
+    "home.howItWorks": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How it works"
+          }
+        }
+      }
+    },
+    "home.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Math Camp"
+          }
+        }
+      }
+    },
+    "home.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose your next stop on the mountain."
+          }
+        }
+      }
+    },
+    "home.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Trail Map"
+          }
+        }
+      }
+    },
+    "instruction.balance": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Make the scale balance. Find the missing weight."
+          }
+        }
+      }
+    },
+    "instruction.calendar": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answer the question."
+          }
+        }
+      }
+    },
+    "instruction.clock": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What time does the clock show?"
+          }
+        }
+      }
+    },
+    "instruction.column": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Calculate. Write the answer under the line."
+          }
+        }
+      }
+    },
+    "instruction.count": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many are there?"
+          }
+        }
+      }
+    },
+    "instruction.decimalline.read": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which decimal number is the marker on?"
+          }
+        }
+      }
+    },
+    "instruction.fill": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fill in the missing number."
+          }
+        }
+      }
+    },
+    "instruction.fractionPicture": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which fraction is shaded?"
+          }
+        }
+      }
+    },
+    "instruction.fractionline.place %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put the marker on the fraction %@."
+          }
+        }
+      }
+    },
+    "instruction.fractionline.read": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which fraction is the marker on?"
+          }
+        }
+      }
+    },
+    "instruction.groups": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "How many are there in total?"
+          }
+        }
+      }
+    },
+    "instruction.magic %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every row, column and diagonal adds up to %lld."
+          }
+        }
+      }
+    },
+    "instruction.numberline.place %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Put the marker on %@."
+          }
+        }
+      }
+    },
+    "instruction.numberline.read": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Which number is the marker on?"
+          }
+        }
+      }
+    },
+    "instruction.pattern": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Find the rule and fill in the missing number."
+          }
+        }
+      }
+    },
+    "instruction.sequence": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fill in the missing number."
+          }
+        }
+      }
+    },
+    "instruction.wordproblem": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Read the problem and write the answer."
+          }
+        }
+      }
+    },
+    "keypad.delete": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete"
+          }
+        }
+      }
+    },
+    "keypad.negate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plus or minus"
+          }
+        }
+      }
+    },
+    "keypad.next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "keypad.point": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decimal point"
+          }
+        }
+      }
+    },
+    "magic.cell %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Row %1$lld, column %2$lld"
+          }
+        }
+      }
+    },
+    "math.of": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "of"
+          }
+        }
+      }
+    },
+    "math.remainder.short": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "R"
+          }
+        }
+      }
+    },
+    "math.spoken.approx": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "is about"
+          }
+        }
+      }
+    },
+    "math.spoken.blank": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "blank"
+          }
+        }
+      }
+    },
+    "math.spoken.closeParen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "close bracket"
+          }
+        }
+      }
+    },
+    "math.spoken.divide": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "divided by"
+          }
+        }
+      }
+    },
+    "math.spoken.equals": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "equals"
+          }
+        }
+      }
+    },
+    "math.spoken.fraction": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ over %2$@"
+          }
+        }
+      }
+    },
+    "math.spoken.greater": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "is greater than"
+          }
+        }
+      }
+    },
+    "math.spoken.less": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "is less than"
+          }
+        }
+      }
+    },
+    "math.spoken.minus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "minus"
+          }
+        }
+      }
+    },
+    "math.spoken.negative": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "negative %lld"
+          }
+        }
+      }
+    },
+    "math.spoken.openParen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "open bracket"
+          }
+        }
+      }
+    },
+    "math.spoken.percent": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ percent"
+          }
+        }
+      }
+    },
+    "math.spoken.plus": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "plus"
+          }
+        }
+      }
+    },
+    "math.spoken.remainder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "remainder"
+          }
+        }
+      }
+    },
+    "math.spoken.roundsTo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rounds to"
+          }
+        }
+      }
+    },
+    "math.spoken.times": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "times"
+          }
+        }
+      }
+    },
+    "math.spoken.to": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "to"
+          }
+        }
+      }
+    },
+    "numberline.accessibility %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Number line from %1$@ to %2$@"
+          }
+        }
+      }
+    },
+    "numberline.noMarker": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No marker yet"
+          }
+        }
+      }
+    },
+    "onboarding.1.text": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Practice maths on a trip up the mountain. Every task is a small step."
+          }
+        }
+      }
+    },
+    "onboarding.1.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Math Camp"
+          }
+        }
+      }
+    },
+    "onboarding.2.text": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "From counting to fractions, time and puzzles. Each stop teaches new skills."
+          }
+        }
+      }
+    },
+    "onboarding.2.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seven stops on the trail"
+          }
+        }
+      }
+    },
+    "onboarding.3.text": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every category has 30 tasks. Warm-up is easy, Climb is the full range and Peak is the hardest."
+          }
+        }
+      }
+    },
+    "onboarding.3.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Three levels in every category"
+          }
+        }
+      }
+    },
+    "onboarding.4.text": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Get 3 stars for 90 percent or more. Try a task again to climb higher."
+          }
+        }
+      }
+    },
+    "onboarding.4.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Collect stars"
+          }
+        }
+      }
+    },
+    "onboarding.5.text": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All of Base Camp is free. Premium unlocks every task on the whole mountain."
+          }
+        }
+      }
+    },
+    "onboarding.5.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Free to start"
+          }
+        }
+      }
+    },
+    "onboarding.next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next"
+          }
+        }
+      }
+    },
+    "onboarding.page %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Page %1$lld of %2$lld"
+          }
+        }
+      }
+    },
+    "onboarding.skip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip"
+          }
+        }
+      }
+    },
+    "onboarding.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Let's go!"
+          }
+        }
+      }
+    },
+    "paywall.error.nothingToRestore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are no purchases to restore."
+          }
+        }
+      }
+    },
+    "paywall.error.purchase": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The purchase could not be completed. Please try again."
+          }
+        }
+      }
+    },
+    "paywall.error.restore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases could not be restored. Please try again."
+          }
+        }
+      }
+    },
+    "paywall.error.verification": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The purchase could not be verified."
+          }
+        }
+      }
+    },
+    "placevalue.hundreds.count": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld hundred"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld hundreds"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "placevalue.hundreds.unit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hundreds"
+          }
+        }
+      }
+    },
+    "placevalue.ones.count": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld one"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld ones"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "placevalue.ones.unit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ones"
+          }
+        }
+      }
+    },
+    "placevalue.tens.count": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld ten"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld tens"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "placevalue.tens.unit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tens"
+          }
+        }
+      }
+    },
+    "premium.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium is active. Thank you!"
+          }
+        }
+      }
+    },
+    "premium.badge.best": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Best value"
+          }
+        }
+      }
+    },
+    "premium.benefit.1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every task in every section"
+          }
+        }
+      }
+    },
+    "premium.benefit.2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New sections as soon as they are ready"
+          }
+        }
+      }
+    },
+    "premium.benefit.3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All of Base Camp stays free"
+          }
+        }
+      }
+    },
+    "premium.continue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Continue"
+          }
+        }
+      }
+    },
+    "premium.legal": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Subscriptions renew automatically unless they are cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your Apple Account settings."
+          }
+        }
+      }
+    },
+    "premium.period.lifetime": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "one-time purchase, yours forever"
+          }
+        }
+      }
+    },
+    "premium.period.monthly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per month, renews automatically"
+          }
+        }
+      }
+    },
+    "premium.period.yearly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "per year, renews automatically"
+          }
+        }
+      }
+    },
+    "premium.restore": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore purchases"
+          }
+        }
+      }
+    },
+    "premium.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        }
+      }
+    },
+    "premium.status.active": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium active"
+          }
+        }
+      }
+    },
+    "premium.status.get": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock Premium"
+          }
+        }
+      }
+    },
+    "premium.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unlock every task on the whole mountain."
+          }
+        }
+      }
+    },
+    "premium.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Math Camp Premium"
+          }
+        }
+      }
+    },
+    "premium.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premium is not available right now. Please check your connection and try again."
+          }
+        }
+      }
+    },
+    "progress.fraction %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "progress.tasks %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld / %2$lld tasks"
+          }
+        }
+      }
+    },
+    "results.backToCategory": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
+          }
+        }
+      }
+    },
+    "results.message.0": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every climb starts at base camp. Try again!"
+          }
+        }
+      }
+    },
+    "results.message.1": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Good start. Try again to climb higher!"
+          }
+        }
+      }
+    },
+    "results.message.2": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Great climb! Keep going!"
+          }
+        }
+      }
+    },
+    "results.message.3": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fantastic! You reached the peak!"
+          }
+        }
+      }
+    },
+    "results.nextTask": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next task"
+          }
+        }
+      }
+    },
+    "results.review": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Review answers"
+          }
+        }
+      }
+    },
+    "results.score %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld of %2$lld correct"
+          }
+        }
+      }
+    },
+    "results.tryAgain": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        }
+      }
+    },
+    "round.to": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Round to the nearest %lld:"
+          }
+        }
+      }
+    },
+    "section.number %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Section %@"
+          }
+        }
+      }
+    },
+    "section.s1.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numbers to 20"
+          }
+        }
+      }
+    },
+    "section.s1.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Base Camp"
+          }
+        }
+      }
+    },
+    "section.s2.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numbers to 100"
+          }
+        }
+      }
+    },
+    "section.s2.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Forest Trail"
+          }
+        }
+      }
+    },
+    "section.s3.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiplication and division"
+          }
+        }
+      }
+    },
+    "section.s3.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rocky Ridge"
+          }
+        }
+      }
+    },
+    "section.s4.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Big numbers"
+          }
+        }
+      }
+    },
+    "section.s4.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Summit"
+          }
+        }
+      }
+    },
+    "section.s5.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fractions and decimals"
+          }
+        }
+      }
+    },
+    "section.s5.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fraction Falls"
+          }
+        }
+      }
+    },
+    "section.s6.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time and measures"
+          }
+        }
+      }
+    },
+    "section.s6.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ranger Station"
+          }
+        }
+      }
+    },
+    "section.s7.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logic and puzzles"
+          }
+        }
+      }
+    },
+    "section.s7.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Expedition"
+          }
+        }
+      }
+    },
+    "splash.tagline": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Climb the mountain of maths, one step at a time."
+          }
+        }
+      }
+    },
+    "stars.count %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld star"
+                }
+              },
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld stars"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "task.accessibility.correct": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Correct"
+          }
+        }
+      }
+    },
+    "task.accessibility.wrong": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrong"
+          }
+        }
+      }
+    },
+    "task.answer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answer"
+          }
+        }
+      }
+    },
+    "task.check": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check"
+          }
+        }
+      }
+    },
+    "task.correctAnswer %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answer: %@"
+          }
+        }
+      }
+    },
+    "task.editSlot %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit answer %lld"
+          }
+        }
+      }
+    },
+    "task.locked": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Locked. This task needs Premium."
+          }
+        }
+      }
+    },
+    "task.new": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New"
+          }
+        }
+      }
+    },
+    "task.next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next exercise"
+          }
+        }
+      }
+    },
+    "task.number %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Task %lld"
+          }
+        }
+      }
+    },
+    "task.previous": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Previous exercise"
+          }
+        }
+      }
+    },
+    "task.progress %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld / %2$lld"
+          }
+        }
+      }
+    },
+    "task.today": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today's task"
+          }
+        }
+      }
+    },
+    "task.today.short": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today"
+          }
+        }
+      }
+    },
+    "tier.easy.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasks 1–10 · easy numbers"
+          }
+        }
+      }
+    },
+    "tier.easy.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Warm-up"
+          }
+        }
+      }
+    },
+    "tier.hard.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasks 21–30 · the hardest cases"
+          }
+        }
+      }
+    },
+    "tier.hard.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Peak"
+          }
+        }
+      }
+    },
+    "tier.medium.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tasks 11–20 · the full range"
+          }
+        }
+      }
+    },
+    "tier.medium.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Climb"
+          }
+        }
+      }
+    },
+    "unit.cm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cm"
+          }
+        }
+      }
+    },
+    "unit.g": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "g"
+          }
+        }
+      }
+    },
+    "unit.kg": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kg"
+          }
+        }
+      }
+    },
+    "unit.km": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "km"
+          }
+        }
+      }
+    },
+    "unit.l": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "l"
+          }
+        }
+      }
+    },
+    "unit.m": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "m"
+          }
+        }
+      }
+    },
+    "unit.min": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "min"
+          }
+        }
+      }
+    },
+    "unit.ml": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ml"
+          }
+        }
+      }
+    },
+    "unit.mm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mm"
+          }
+        }
+      }
+    },
+    "wp.s1.add.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld pine cones. %1$@ finds %3$lld more pine cones. How many pine cones does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s1.add.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds on a tree. %2$lld more birds land on the tree. How many birds are on the tree now?"
+          }
+        }
+      }
+    },
+    "wp.s1.add.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld apples in a basket. %1$@ adds %3$lld more apples to the basket. How many apples are in the basket now?"
+          }
+        }
+      }
+    },
+    "wp.s1.add.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld tents at the camp. %2$lld more tents are put up. How many tents are at the camp now?"
+          }
+        }
+      }
+    },
+    "wp.s1.cmp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %3$lld shells. %2$@ has %4$lld shells. How many more shells does %1$@ have than %2$@?"
+          }
+        }
+      }
+    },
+    "wp.s1.cmp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %3$lld books. %2$@ has %4$lld books. How many fewer books does %2$@ have than %1$@?"
+          }
+        }
+      }
+    },
+    "wp.s1.cmp.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld red flowers and %2$lld yellow flowers in a garden. How many more red flowers than yellow flowers are there?"
+          }
+        }
+      }
+    },
+    "wp.s1.less.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld cards. %1$@ has %4$lld fewer cards than %2$@. How many cards does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s1.less.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ picks %3$lld apples. %1$@ picks %4$lld fewer apples than %2$@. How many apples does %1$@ pick?"
+          }
+        }
+      }
+    },
+    "wp.s1.miss.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ needs %2$lld chairs for the tent. %1$@ has %3$lld chairs. How many more chairs does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s1.miss.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ wants to collect %2$lld pine cones. %1$@ has %3$lld pine cones now. How many more pine cones does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s1.more.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld stickers. %1$@ has %4$lld more stickers than %2$@. How many stickers does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s1.more.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ collects %3$lld stones. %1$@ collects %4$lld more stones than %2$@. How many stones does %1$@ collect?"
+          }
+        }
+      }
+    },
+    "wp.s1.sub.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds on a tree. %2$lld birds fly away. How many birds are on the tree now?"
+          }
+        }
+      }
+    },
+    "wp.s1.sub.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cookies. %1$@ eats %3$lld cookies. How many cookies does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s1.sub.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld fish in a pond. %2$lld fish swim away. How many fish are in the pond now?"
+          }
+        }
+      }
+    },
+    "wp.s1.sub.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld balls. %1$@ loses %3$lld balls. How many balls does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s1.two.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld eggs. %1$@ finds %3$lld more eggs. %1$@ uses %4$lld eggs. How many eggs does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s1.two.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers at the camp. %2$lld more hikers arrive. Then %3$lld hikers leave. How many hikers are at the camp now?"
+          }
+        }
+      }
+    },
+    "wp.s1.two.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld stones. %1$@ puts %3$lld stones in a box and %4$lld stones in a bag. How many stones does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s1.two.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld shells. %1$@ finds %3$lld more shells in the sand. %1$@ finds %4$lld more shells in the water. How many shells does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s2.add.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers on the mountain trail. %2$lld more hikers arrive on the trail. How many hikers are on the trail now?"
+          }
+        }
+      }
+    },
+    "wp.s2.add.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld stickers in a book. %1$@ adds %3$lld more stickers to the book. How many stickers are in the book now?"
+          }
+        }
+      }
+    },
+    "wp.s2.add.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld pine trees in a forest. %2$lld more pine trees grow in the forest. How many pine trees are in the forest now?"
+          }
+        }
+      }
+    },
+    "wp.s2.add.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ collects %2$lld stones on Monday and %3$lld stones on Tuesday. How many stones does %1$@ collect in total?"
+          }
+        }
+      }
+    },
+    "wp.s2.cmp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %3$lld books. %2$@ has %4$lld books. How many more books does %1$@ have than %2$@?"
+          }
+        }
+      }
+    },
+    "wp.s2.cmp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %3$lld stones. %2$@ has %4$lld stones. How many fewer stones does %2$@ have than %1$@?"
+          }
+        }
+      }
+    },
+    "wp.s2.cmp.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A forest path has %1$lld pine trees on the left side and %2$lld pine trees on the right side. How many more pine trees are on the left side?"
+          }
+        }
+      }
+    },
+    "wp.s2.less.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld flowers. %1$@ has %4$lld fewer flowers than %2$@. How many flowers does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s2.less.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ counts %3$lld birds. %1$@ counts %4$lld fewer birds than %2$@. How many birds does %1$@ count?"
+          }
+        }
+      }
+    },
+    "wp.s2.miss.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ needs %2$lld logs for a campfire. %1$@ has %3$lld logs. How many more logs does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s2.miss.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ wants to collect %2$lld shells. %1$@ has %3$lld shells now. How many more shells does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s2.more.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld pine cones. %1$@ has %4$lld more pine cones than %2$@. How many pine cones does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s2.more.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ reads %3$lld pages. %1$@ reads %4$lld more pages than %2$@. How many pages does %1$@ read?"
+          }
+        }
+      }
+    },
+    "wp.s2.sub.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld fish in a lake. %2$lld fish swim away. How many fish are in the lake now?"
+          }
+        }
+      }
+    },
+    "wp.s2.sub.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cards. %1$@ puts %3$lld cards in a box. How many cards does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s2.sub.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld apples on a tree. %2$lld apples fall to the ground. How many apples are on the tree now?"
+          }
+        }
+      }
+    },
+    "wp.s2.sub.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld flashlights. %2$lld flashlights stop working. How many flashlights still work?"
+          }
+        }
+      }
+    },
+    "wp.s2.two.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld hikers. %2$lld hikers arrive in the morning. %3$lld hikers leave in the evening. How many hikers are at the camp now?"
+          }
+        }
+      }
+    },
+    "wp.s2.two.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld pencils. %1$@ puts %3$lld pencils in one box and %4$lld pencils in another box. How many pencils does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s2.two.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cards. %1$@ gets %3$lld more cards on Monday. %1$@ gets %4$lld more cards on Tuesday. How many cards does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s2.two.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds on a tree. %2$lld more birds land on the tree. Then %3$lld birds fly away. How many birds are on the tree now?"
+          }
+        }
+      }
+    },
+    "wp.s3.div.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld pencils. %1$@ puts %3$lld pencils in each box. How many boxes does %1$@ fill?"
+          }
+        }
+      }
+    },
+    "wp.s3.div.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers. Each canoe carries %2$lld hikers. How many canoes do the hikers need?"
+          }
+        }
+      }
+    },
+    "wp.s3.div.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld apples. %1$@ puts %3$lld apples in each basket. How many baskets does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s3.grp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld tents. Each tent has %2$lld hikers. How many hikers are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.grp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ puts %2$lld boxes on a table. Each box has %3$lld pencils. How many pencils are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.grp.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld baskets. Each basket has %2$lld apples. How many apples are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.grp.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld canoes. Each canoe carries %2$lld hikers. How many hikers do the canoes carry in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.grp.05": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld bags. Each bag has %3$lld stones. How many stones does %1$@ have in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.grp.06": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld trees. Each tree has %2$lld birds. How many birds are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.mad.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld boxes. Each box has %3$lld pencils. %1$@ also has %4$lld loose pencils. How many pencils does %1$@ have in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.mad.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld tents. Each tent has %2$lld hikers. %3$lld more hikers sit by the fire. How many hikers are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s3.msb.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld boxes. Each box has %3$lld cookies. %1$@ eats %4$lld cookies. How many cookies does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s3.msb.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld canoes. Each canoe has %2$lld hikers. %3$lld hikers get out. How many hikers are in the canoes now?"
+          }
+        }
+      }
+    },
+    "wp.s3.rem.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cookies. %1$@ puts %3$lld cookies in each box. %1$@ fills as many boxes as possible. How many cookies are left?"
+          }
+        }
+      }
+    },
+    "wp.s3.rem.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers. Each tent has space for %2$lld hikers. The hikers fill as many tents as possible. How many hikers are left without a tent?"
+          }
+        }
+      }
+    },
+    "wp.s3.shr.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cookies. %1$@ puts the cookies into %3$lld boxes equally. How many cookies are in each box?"
+          }
+        }
+      }
+    },
+    "wp.s3.shr.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers. The hikers sit in %2$lld tents equally. How many hikers are in each tent?"
+          }
+        }
+      }
+    },
+    "wp.s3.shr.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld stickers. %1$@ puts the stickers on %3$lld pages equally. How many stickers are on each page?"
+          }
+        }
+      }
+    },
+    "wp.s3.tms.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld pine cones. %1$@ has %4$lld times as many pine cones as %2$@. How many pine cones does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s3.tms.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld books. %1$@ has %4$lld times as many books as %2$@. How many books does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s3.tms.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds on a small tree. There are %2$lld times as many birds on a big tree. How many birds are on the big tree?"
+          }
+        }
+      }
+    },
+    "wp.s3.up.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers. Each canoe can carry %2$lld hikers. How many canoes do the hikers need?"
+          }
+        }
+      }
+    },
+    "wp.s3.up.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld eggs. Each box holds %3$lld eggs. How many boxes does %1$@ need for all the eggs?"
+          }
+        }
+      }
+    },
+    "wp.s3.up.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld books. Each shelf holds %2$lld books. How many shelves are needed for all the books?"
+          }
+        }
+      }
+    },
+    "wp.s4.add.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ walks %2$lld steps in the morning. %1$@ walks %3$lld more steps in the afternoon. How many steps does %1$@ walk in total?"
+          }
+        }
+      }
+    },
+    "wp.s4.add.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld cups. %2$lld more cups arrive. How many cups does the camp have now?"
+          }
+        }
+      }
+    },
+    "wp.s4.add.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld pine trees on the north slope and %2$lld pine trees on the south slope. How many pine trees are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s4.add.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ reads %2$lld pages in one week. %1$@ reads %3$lld pages in the next week. How many pages does %1$@ read in total?"
+          }
+        }
+      }
+    },
+    "wp.s4.cmp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ climbs %3$lld steps. %2$@ climbs %4$lld steps. How many more steps does %1$@ climb than %2$@?"
+          }
+        }
+      }
+    },
+    "wp.s4.cmp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %3$lld stickers. %2$@ has %4$lld stickers. How many fewer stickers does %2$@ have than %1$@?"
+          }
+        }
+      }
+    },
+    "wp.s4.cmp.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A big forest has %1$lld trees. A small forest has %2$lld trees. How many more trees does the big forest have?"
+          }
+        }
+      }
+    },
+    "wp.s4.less.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld cards. %1$@ has %4$lld fewer cards than %2$@. How many cards does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s4.less.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ walks %3$lld steps. %1$@ walks %4$lld fewer steps than %2$@. How many steps does %1$@ walk?"
+          }
+        }
+      }
+    },
+    "wp.s4.miss.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ needs %2$lld stones for a wall. %1$@ has %3$lld stones. How many more stones does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s4.miss.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ wants to reach %2$lld points in a game. %1$@ has %3$lld points now. How many more points does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s4.more.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ collects %3$lld shells. %1$@ collects %4$lld more shells than %2$@. How many shells does %1$@ collect?"
+          }
+        }
+      }
+    },
+    "wp.s4.more.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ counts %3$lld birds. %1$@ counts %4$lld more birds than %2$@. How many birds does %1$@ count?"
+          }
+        }
+      }
+    },
+    "wp.s4.sub.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A trail has %1$lld stones. %2$lld stones roll away in the rain. How many stones are on the trail now?"
+          }
+        }
+      }
+    },
+    "wp.s4.sub.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld beads. %1$@ gives %3$lld beads to a friend. How many beads does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s4.sub.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds in a forest. %2$lld birds fly south. How many birds are in the forest now?"
+          }
+        }
+      }
+    },
+    "wp.s4.sub.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lake has %1$lld fish. %2$lld fish swim into a river. How many fish are in the lake now?"
+          }
+        }
+      }
+    },
+    "wp.s4.two.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld hikers. %2$lld hikers arrive on Monday. %3$lld hikers leave on Tuesday. How many hikers are at the camp now?"
+          }
+        }
+      }
+    },
+    "wp.s4.two.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld marbles. %1$@ puts %3$lld marbles in a box and %4$lld marbles in a bag. How many marbles does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s4.two.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld stickers. %1$@ gets %3$lld more stickers on Monday and %4$lld more stickers on Tuesday. How many stickers does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s4.two.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds on a lake. %2$lld more birds land on the lake. Then %3$lld birds fly away. How many birds are on the lake now?"
+          }
+        }
+      }
+    },
+    "wp.s5.fifth.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld tents. A fifth of the tents are blue. How many tents are blue?"
+          }
+        }
+      }
+    },
+    "wp.s5.half.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld apples. %1$@ gives half of the apples to a friend. How many apples does %1$@ give?"
+          }
+        }
+      }
+    },
+    "wp.s5.half.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers. Half of the hikers carry a red backpack. How many hikers carry a red backpack?"
+          }
+        }
+      }
+    },
+    "wp.s5.half.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A basket has %1$lld eggs. Half of the eggs are brown. How many eggs are brown?"
+          }
+        }
+      }
+    },
+    "wp.s5.half.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld stickers. Half of the stickers are blue. How many stickers are blue?"
+          }
+        }
+      }
+    },
+    "wp.s5.pct10.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A shelf has %1$lld books. 10 percent of the books are new. How many books are new?"
+          }
+        }
+      }
+    },
+    "wp.s5.pct10.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld stickers. 10 percent of the stickers are gold. How many stickers are gold?"
+          }
+        }
+      }
+    },
+    "wp.s5.pct25.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A camp has %1$lld tents. 25 percent of the tents are red. How many tents are red?"
+          }
+        }
+      }
+    },
+    "wp.s5.pct25.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cards. 25 percent of the cards are blue. How many cards are blue?"
+          }
+        }
+      }
+    },
+    "wp.s5.pct50.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A lake has %1$lld ducks. 50 percent of the ducks are white. How many ducks are white?"
+          }
+        }
+      }
+    },
+    "wp.s5.pct50.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld beads. 50 percent of the beads are red. How many beads are red?"
+          }
+        }
+      }
+    },
+    "wp.s5.quarter.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cookies. %1$@ eats a quarter of the cookies. How many cookies does %1$@ eat?"
+          }
+        }
+      }
+    },
+    "wp.s5.quarter.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld birds on a tree. A quarter of the birds fly away. How many birds fly away?"
+          }
+        }
+      }
+    },
+    "wp.s5.quarter.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A box has %1$lld pencils. A quarter of the pencils are red. How many pencils are red?"
+          }
+        }
+      }
+    },
+    "wp.s5.resthalf.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld pears. %1$@ eats half of the pears. How many pears are left?"
+          }
+        }
+      }
+    },
+    "wp.s5.resthalf.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld fish in a pond. Half of the fish swim away. How many fish are left in the pond?"
+          }
+        }
+      }
+    },
+    "wp.s5.restquarter.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld marbles. A quarter of the marbles are lost. How many marbles does %1$@ still have?"
+          }
+        }
+      }
+    },
+    "wp.s5.restquarter.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld hikers. A quarter of the hikers go home. How many hikers stay?"
+          }
+        }
+      }
+    },
+    "wp.s5.restthird.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A basket has %1$lld plums. A third of the plums are eaten. How many plums are left?"
+          }
+        }
+      }
+    },
+    "wp.s5.tenth.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A forest has %1$lld trees. A tenth of the trees are tall. How many trees are tall?"
+          }
+        }
+      }
+    },
+    "wp.s5.third.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld flowers in a garden. A third of the flowers are yellow. How many flowers are yellow?"
+          }
+        }
+      }
+    },
+    "wp.s5.third.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld cards. A third of the cards are green. How many cards are green?"
+          }
+        }
+      }
+    },
+    "wp.s6.add.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ hikes for %2$lld min in the morning. %1$@ hikes for %3$lld min in the afternoon. For how many minutes does %1$@ hike in total?"
+          }
+        }
+      }
+    },
+    "wp.s6.add.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rope is %2$lld cm long. %1$@ adds a piece of %3$lld cm to the rope. How long is the rope now, in cm?"
+          }
+        }
+      }
+    },
+    "wp.s6.add.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bag of apples weighs %1$lld g. A bag of pears weighs %2$lld g. How many g do both bags weigh together?"
+          }
+        }
+      }
+    },
+    "wp.s6.add.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bottle has %2$lld ml of water. %1$@ adds %3$lld ml more water to the bottle. How many ml of water are in the bottle now?"
+          }
+        }
+      }
+    },
+    "wp.s6.cmp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ walks %3$lld m. %2$@ walks %4$lld m. How many more m does %1$@ walk than %2$@?"
+          }
+        }
+      }
+    },
+    "wp.s6.cmp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has a rope of %3$lld cm. %2$@ has a rope of %4$lld cm. How many cm shorter is the rope of %2$@?"
+          }
+        }
+      }
+    },
+    "wp.s6.cmp.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A pine is %1$lld cm tall. A bush is %2$lld cm tall. How many cm taller is the pine?"
+          }
+        }
+      }
+    },
+    "wp.s6.less.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ carries %3$lld g of stones. %1$@ carries %4$lld g less than %2$@. How many g of stones does %1$@ carry?"
+          }
+        }
+      }
+    },
+    "wp.s6.less.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A pot has %1$lld ml of water. A cup has %2$lld ml less water than the pot. How many ml of water are in the cup?"
+          }
+        }
+      }
+    },
+    "wp.s6.miss.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ needs %2$lld min to walk to the lake. %1$@ walks for %3$lld min. How many more minutes does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s6.miss.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ wants a rope of %2$lld cm. %1$@ has a rope of %3$lld cm. How many more cm does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s6.more.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ runs for %3$lld min. %1$@ runs for %4$lld min longer than %2$@. For how many minutes does %1$@ run?"
+          }
+        }
+      }
+    },
+    "wp.s6.more.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A red rope is %1$lld cm long. A blue rope is %2$lld cm longer than the red rope. How long is the blue rope, in cm?"
+          }
+        }
+      }
+    },
+    "wp.s6.sub.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A trail is %2$lld m long. %1$@ walks %3$lld m of the trail. How many m of the trail are left?"
+          }
+        }
+      }
+    },
+    "wp.s6.sub.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bottle has %2$lld ml of juice. %1$@ drinks %3$lld ml of the juice. How many ml of juice are left?"
+          }
+        }
+      }
+    },
+    "wp.s6.sub.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A ribbon is %2$lld cm long. %1$@ cuts %3$lld cm from the ribbon. How long is the ribbon now, in cm?"
+          }
+        }
+      }
+    },
+    "wp.s6.sub.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A film lasts %2$lld min. %1$@ watches the film for %3$lld min. How many more minutes does the film last?"
+          }
+        }
+      }
+    },
+    "wp.s6.two.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ walks for %2$lld min. %1$@ rests for %3$lld min. Then %1$@ walks for %4$lld min. How many minutes does all of this take?"
+          }
+        }
+      }
+    },
+    "wp.s6.two.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A tank has %2$lld ml of water. %1$@ adds %3$lld ml. Then %1$@ takes out %4$lld ml. How many ml of water are in the tank now?"
+          }
+        }
+      }
+    },
+    "wp.s6.two.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A rope is %2$lld cm long. %1$@ cuts off %3$lld cm. Then %1$@ cuts off %4$lld cm more. How long is the rope now, in cm?"
+          }
+        }
+      }
+    },
+    "wp.s6.two.04": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A bag weighs %2$lld g. %1$@ puts %3$lld g of stones in the bag. Then %1$@ takes out %4$lld g. How many g does the bag weigh now?"
+          }
+        }
+      }
+    },
+    "wp.s7.add.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ finds %2$lld clues. %1$@ finds %3$lld more clues. How many clues does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s7.add.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A puzzle has %1$lld pieces on the table and %2$lld pieces in the box. How many pieces does the puzzle have?"
+          }
+        }
+      }
+    },
+    "wp.s7.add.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A map has %1$lld red dots and %2$lld blue dots. How many dots are on the map?"
+          }
+        }
+      }
+    },
+    "wp.s7.cmp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %3$lld maps. %2$@ has %4$lld maps. How many more maps does %1$@ have than %2$@?"
+          }
+        }
+      }
+    },
+    "wp.s7.cmp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ solves %3$lld puzzles. %2$@ solves %4$lld puzzles. How many fewer puzzles does %2$@ solve than %1$@?"
+          }
+        }
+      }
+    },
+    "wp.s7.grp.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld boxes. Each box has %2$lld gems. How many gems are there in total?"
+          }
+        }
+      }
+    },
+    "wp.s7.grp.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld maps. Each map has %3$lld flags. How many flags does %1$@ have in total?"
+          }
+        }
+      }
+    },
+    "wp.s7.less.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld clues. %1$@ has %4$lld fewer clues than %2$@. How many clues does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s7.less.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ draws %3$lld circles. %1$@ draws %4$lld fewer circles than %2$@. How many circles does %1$@ draw?"
+          }
+        }
+      }
+    },
+    "wp.s7.miss.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A puzzle needs %2$lld pieces. %1$@ has %3$lld pieces. How many more pieces does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s7.miss.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ needs %2$lld keys to open all doors. %1$@ has %3$lld keys. How many more keys does %1$@ need?"
+          }
+        }
+      }
+    },
+    "wp.s7.more.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ has %3$lld keys. %1$@ has %4$lld more keys than %2$@. How many keys does %1$@ have?"
+          }
+        }
+      }
+    },
+    "wp.s7.more.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%2$@ finds %3$lld gems. %1$@ finds %4$lld more gems than %2$@. How many gems does %1$@ find?"
+          }
+        }
+      }
+    },
+    "wp.s7.shr.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld gems. %1$@ puts the gems into %3$lld bags equally. How many gems are in each bag?"
+          }
+        }
+      }
+    },
+    "wp.s7.shr.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld keys. The keys go into %2$lld boxes equally. How many keys are in each box?"
+          }
+        }
+      }
+    },
+    "wp.s7.sub.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A treasure box has %1$lld gems. %2$lld gems fall out. How many gems are in the box now?"
+          }
+        }
+      }
+    },
+    "wp.s7.sub.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld keys. %1$@ loses %3$lld keys. How many keys does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s7.sub.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "There are %1$lld lights on a path. %2$lld lights go out. How many lights are still on?"
+          }
+        }
+      }
+    },
+    "wp.s7.two.01": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld gems. %1$@ finds %3$lld more gems. Then %1$@ puts %4$lld gems in a box. How many gems does %1$@ have now?"
+          }
+        }
+      }
+    },
+    "wp.s7.two.02": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A path has %1$lld lights. %2$lld lights go out in the evening. %3$lld more lights go out at night. How many lights are still on?"
+          }
+        }
+      }
+    },
+    "wp.s7.two.03": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ has %2$lld clues. %1$@ finds %3$lld more clues in a cave. %1$@ finds %4$lld more clues in a tower. How many clues does %1$@ have now?"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}
