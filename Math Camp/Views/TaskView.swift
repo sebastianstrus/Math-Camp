@@ -55,7 +55,7 @@ struct TaskView: View {
         .navigationTitle(Text(LocalizedStringKey(category.titleKey)))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarColorScheme(.dark, for: .navigationBar)
-        .sheet(isPresented: $showPremium) { PaywallView() }
+        .fullScreenCover(isPresented: $showPremium) { PaywallView() }
         .sensoryFeedback(.success, trigger: session.isChecked) { _, checked in checked && session.stars >= 2 }
     }
 

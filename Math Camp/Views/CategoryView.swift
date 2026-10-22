@@ -43,10 +43,10 @@ struct CategoryView: View {
         .navigationTitle(Text(LocalizedStringKey(category.titleKey)))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarColorScheme(.dark, for: .navigationBar)
-        .sheet(isPresented: $showPremium) { PaywallView() }
-        #if DEBUG
-        .toolbar { ToolbarItem(placement: .topBarTrailing) { DebugUnlockToggle() } }
-        #endif
+        .fullScreenCover(isPresented: $showPremium) { PaywallView() }
+//        #if DEBUG
+//        .toolbar { ToolbarItem(placement: .topBarTrailing) { DebugUnlockToggle() } }
+//        #endif
     }
 
     // MARK: Today's task

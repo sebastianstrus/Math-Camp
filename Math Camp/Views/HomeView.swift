@@ -41,7 +41,7 @@ struct HomeView: View {
             }
             .background(TrailBackground())
             .toolbar(.hidden, for: .navigationBar)
-            .sheet(isPresented: $showPaywall) { PaywallView() }
+            .fullScreenCover(isPresented: $showPaywall) { PaywallView() }
             .fullScreenCover(isPresented: $showIntro) { OnboardingView { showIntro = false } }
             .navigationDestination(for: Route.self) { route in
                 switch route {

@@ -56,8 +56,6 @@ struct PaywallView: View {
             .padding(16)
             .accessibilityLabel(Text("common.close"))
         }
-        .presentationDetents([.large])
-        .presentationDragIndicator(.visible)
         .task {
             if premium.products.isEmpty { await premium.loadProducts() }
         }

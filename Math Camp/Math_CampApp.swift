@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct Math_CampApp: App {
     @State private var premium = PremiumAccess()
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
         #if DEBUG
@@ -23,6 +24,9 @@ struct Math_CampApp: App {
             RootView()
                 .environment(premium)
                 .preferredColorScheme(.dark)
+                .onChange(of: scenePhase) { _, phase in
+                    if phase == .active { Task { await premium.refreshEntitlements() } }
+                }
         }
         .modelContainer(for: TaskResult.self)
     }

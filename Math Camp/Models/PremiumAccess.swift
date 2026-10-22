@@ -128,6 +128,15 @@ final class PremiumAccess {
         }
         await transaction.finish()
         await refreshEntitlements()
+        // A just-verified purchase counts even if `currentEntitlements` has not caught up yet.
+        if !isPremium, isEntitling(transaction) { isPremium = true }
+    }
+
+    private func isEntitling(_ transaction: Transaction) -> Bool {
+        guard PremiumPlan(rawValue: transaction.productID) != nil,
+              transaction.revocationDate == nil else { return false }
+        if let expiration = transaction.expirationDate { return expiration > .now }
+        return true
     }
 
     func refreshEntitlements() async {
@@ -137,6 +146,17 @@ final class PremiumAccess {
                   transaction.revocationDate == nil,
                   PremiumPlan(rawValue: transaction.productID) != nil else { continue }
             premium = true
+        }
+        // `currentEntitlements` can come back empty right after launch (and with local
+        // StoreKit testing), so also look at the latest transaction of every plan.
+        if !premium {
+            for plan in PremiumPlan.allCases {
+                if case .verified(let transaction) = await Transaction.latest(for: plan.rawValue),
+                   isEntitling(transaction) {
+                    premium = true
+                    break
+                }
+            }
         }
         isPremium = premium
     }
