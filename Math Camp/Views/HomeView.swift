@@ -11,6 +11,8 @@ enum Route: Hashable {
     case section(String)
     case category(String)
     case task(categoryID: String, taskNumber: Int)
+    case settings
+    case statistics
 }
 
 /// "The Trail Map": the sections as stops on a mountain trail.
@@ -51,6 +53,10 @@ struct HomeView: View {
                     if let category = ContentCatalog.category(id: categoryID) {
                         TaskView(category: category, taskNumber: taskNumber)
                     }
+                case .settings:
+                    SettingsView()
+                case .statistics:
+                    StatisticsView()
                 }
             }
         }
@@ -63,9 +69,21 @@ struct HomeView: View {
         let stars = available.reduce(0) { $0 + progress.stars(in: $1) }
 
         return VStack(alignment: .leading, spacing: 10) {
-            Text("home.title")
-                .font(Theme.font(.largeTitle))
-                .foregroundStyle(Theme.textPrimary)
+            HStack(alignment: .top, spacing: 12) {
+                Text("home.title")
+                    .font(Theme.font(.largeTitle))
+                    .foregroundStyle(Theme.textPrimary)
+                Spacer(minLength: 8)
+                NavigationLink(value: Route.settings) {
+                    Image(systemName: "gearshape.fill")
+                        .font(Theme.font(.title3))
+                        .foregroundStyle(Theme.textPrimary)
+                        .frame(width: Theme.minTouch, height: Theme.minTouch)
+                        .background(Color.white.opacity(0.14), in: Circle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(Text("home.settings"))
+            }
             Text("home.subtitle")
                 .font(Theme.font(.title3, weight: .medium))
                 .foregroundStyle(Theme.textSecondary)
