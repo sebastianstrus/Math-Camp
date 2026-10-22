@@ -12,10 +12,8 @@ enum SoundEffect: String, CaseIterable {
     case keyTap = "key_tap"
     /// The "Check" button.
     case check = "check"
-    /// The first, second and third star popping in on the results card.
-    case star1 = "star_1"
-    case star2 = "star_2"
-    case star3 = "star_3"
+    /// A star popping in on the results card. One file, pitched up for each star (see `playStar`).
+    case star = "star"
     /// Fanfare after the third star.
     case taskPerfect = "task_perfect"
     /// Gentle, encouraging sound when no star was earned.
@@ -35,15 +33,6 @@ enum SoundEffect: String, CaseIterable {
         default: 1
         }
     }
-
-    static func star(_ number: Int) -> SoundEffect? {
-        switch number {
-        case 1: .star1
-        case 2: .star2
-        case 3: .star3
-        default: nil
-        }
-    }
 }
 
 /// Plays short sound effects. Respects the sound toggle in Settings and the silent switch
@@ -56,8 +45,26 @@ final class SoundManager {
     /// The `@AppStorage` key used by the toggle in Settings.
     static let enabledKey = "soundEnabled"
 
+    /// A sound played through the engine at a shifted pitch.
+    private struct PitchedVoice {
+        let node: AVAudioPlayerNode
+        let pitch: AVAudioUnitTimePitch
+    }
+
+    private struct VoiceKey: Hashable {
+        let effect: SoundEffect
+        let cents: Int
+    }
+
+    /// Pitch of the 1st, 2nd and 3rd star in cents: a rising major chord (do, mi, sol).
+    private static let starPitches: [Float] = [0, 400, 700]
+
     private var pool: [SoundEffect: [AVAudioPlayer]] = [:]
     private var isSessionConfigured = false
+
+    private let engine = AVAudioEngine()
+    private var buffers: [SoundEffect: AVAudioPCMBuffer] = [:]
+    private var pitchedVoices: [VoiceKey: PitchedVoice] = [:]
 
     private static let fileExtensions = ["caf", "wav", "m4a", "mp3"]
 
@@ -70,7 +77,14 @@ final class SoundManager {
     /// Loads the sounds ahead of time so the first tap has no delay. Call once at launch.
     func prepare() {
         configureSession()
-        for effect in SoundEffect.allCases { _ = players(for: effect) }
+        for effect in SoundEffect.allCases where effect != .star { _ = players(for: effect) }
+        _ = buffer(for: .star)
+    }
+
+    /// Plays the star sound for the 1st, 2nd or 3rd star, each one higher than the last.
+    func playStar(_ number: Int) {
+        guard (1...Self.starPitches.count).contains(number) else { return }
+        play(.star, pitchCents: Self.starPitches[number - 1])
     }
 
     func play(_ effect: SoundEffect) {
@@ -83,7 +97,63 @@ final class SoundManager {
         player.play()
     }
 
+    /// Plays `effect` shifted by `pitchCents` (100 cents = one semitone) without changing its length.
+    func play(_ effect: SoundEffect, pitchCents: Float) {
+        guard isEnabled else { return }
+        configureSession()
+        guard let buffer = buffer(for: effect),
+              let voice = voice(for: effect, cents: pitchCents, format: buffer.format) else { return }
+
+        if !engine.isRunning {
+            engine.prepare()
+            do { try engine.start() } catch { return }
+        }
+        voice.node.volume = effect.volume
+        voice.node.stop()
+        voice.node.scheduleBuffer(buffer, at: nil, options: .interrupts)
+        voice.node.play()
+    }
+
     // MARK: Private
+
+    private static func url(for effect: SoundEffect) -> URL? {
+        fileExtensions.lazy
+            .compactMap { Bundle.main.url(forResource: effect.rawValue, withExtension: $0) }.first
+    }
+
+    private func buffer(for effect: SoundEffect) -> AVAudioPCMBuffer? {
+        if let cached = buffers[effect] { return cached }
+        guard let url = Self.url(for: effect) else {
+            #if DEBUG
+            print("SoundManager: missing sound file \"\(effect.rawValue)\"")
+            #endif
+            return nil
+        }
+        guard let file = try? AVAudioFile(forReading: url),
+              let buffer = AVAudioPCMBuffer(pcmFormat: file.processingFormat,
+                                            frameCapacity: AVAudioFrameCount(file.length)),
+              (try? file.read(into: buffer)) != nil else { return nil }
+        buffers[effect] = buffer
+        return buffer
+    }
+
+    /// One player node per effect and pitch, wired once into the engine.
+    private func voice(for effect: SoundEffect, cents: Float, format: AVAudioFormat) -> PitchedVoice? {
+        let key = VoiceKey(effect: effect, cents: Int(cents))
+        if let existing = pitchedVoices[key] { return existing }
+
+        let node = AVAudioPlayerNode()
+        let pitch = AVAudioUnitTimePitch()
+        pitch.pitch = cents
+        engine.attach(node)
+        engine.attach(pitch)
+        engine.connect(node, to: pitch, format: format)
+        engine.connect(pitch, to: engine.mainMixerNode, format: format)
+
+        let voice = PitchedVoice(node: node, pitch: pitch)
+        pitchedVoices[key] = voice
+        return voice
+    }
 
     private func configureSession() {
         guard !isSessionConfigured else { return }
@@ -102,8 +172,7 @@ final class SoundManager {
         if let cached = pool[effect] { return cached }
 
         var players: [AVAudioPlayer] = []
-        if let url = Self.fileExtensions.lazy
-            .compactMap({ Bundle.main.url(forResource: effect.rawValue, withExtension: $0) }).first {
+        if let url = Self.url(for: effect) {
             for _ in 0..<effect.voices {
                 guard let player = try? AVAudioPlayer(contentsOf: url) else { break }
                 player.volume = effect.volume

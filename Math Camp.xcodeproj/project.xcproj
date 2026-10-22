@@ -13,8 +13,25 @@
   "files": [
     { "path": "Math-Camp-Info.plist" },
     { "path": "Products.storekit" },
-    { "kind": "folder", "path": "Math Camp", "target-membership": [ "Math Camp" ] },
     {
+      "kind": "folder",
+      "path": "Math Camp",
+      "target-membership": [
+        "Math Camp",
+      ],
+      "membership-exceptions": [
+        {
+          "target": "MathCampTests",
+          "inclusions": [
+            "Sounds/check.mp3",
+            "Sounds/key_tap.mp3",
+            "Sounds/star.mp3",
+            "Sounds/task_perfect.mp3",
+            "Sounds/task_retry.mp3",
+          ],
+        },
+      ],
+    }, {
       "kind": "group",
       "name": "Products",
       "children": [

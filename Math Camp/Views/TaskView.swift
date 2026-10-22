@@ -208,6 +208,7 @@ struct TaskView: View {
     private func check() {
         session.check()
         guard session.isChecked else { return }
+        SoundManager.shared.play(.check)
         TaskResult.record(correct: session.correctCount, total: session.total,
                           categoryID: category.id, taskNumber: taskNumber, in: modelContext)
         withAnimation(.spring(duration: 0.45, bounce: 0.3)) { showResults = true }
@@ -326,10 +327,18 @@ struct ResultsOverlay: View {
             .padding(24)
         }
         .task {
-            // Stars pop in one after another.
+            // Stars pop in one after another, each one pitched higher than the last.
             for star in stride(from: 1, through: stars, by: 1) {
                 try? await Task.sleep(for: .milliseconds(380))
                 withAnimation(.spring(duration: 0.45, bounce: 0.55)) { shownStars = star }
+                SoundManager.shared.playStar(star)
+            }
+            if stars == 3 {
+                try? await Task.sleep(for: .milliseconds(350))
+                SoundManager.shared.play(.taskPerfect)
+            } else if stars == 0 {
+                try? await Task.sleep(for: .milliseconds(380))
+                SoundManager.shared.play(.taskRetry)
             }
         }
     }

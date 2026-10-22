@@ -8,7 +8,9 @@ import SwiftData
 
 /// Stars earned in total, per section and per category.
 struct StatisticsView: View {
+    @Environment(\.modelContext) private var modelContext
     @Query private var results: [TaskResult]
+    @State private var showResetConfirmation = false
 
     var body: some View {
         let progress = ProgressSnapshot(results)
@@ -25,6 +27,17 @@ struct StatisticsView: View {
                 ForEach(sections) { section in
                     sectionCard(section, progress: progress)
                 }
+
+                Button(role: .destructive) {
+                    showResetConfirmation = true
+                } label: {
+                    Label("stats.reset.button", systemImage: "arrow.counterclockwise")
+                        .font(Theme.font(.headline))
+                        .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.bordered)
+                .controlSize(.large)
+                .disabled(results.isEmpty)
             }
             .padding(20)
             .readableContent()
@@ -33,6 +46,17 @@ struct StatisticsView: View {
         .navigationTitle(Text("stats.title"))
         .navigationBarTitleDisplayMode(.large)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        .confirmationDialog("stats.reset.title", isPresented: $showResetConfirmation, titleVisibility: .visible) {
+            Button("stats.reset.confirm", role: .destructive, action: resetProgress)
+        } message: {
+            Text("stats.reset.message")
+        }
+    }
+
+    /// Deletes every saved task result.
+    private func resetProgress() {
+        try? modelContext.delete(model: TaskResult.self)
+        try? modelContext.save()
     }
 
     private func totalCard(stars: Int, maxStars: Int, done: Int, tasks: Int) -> some View {

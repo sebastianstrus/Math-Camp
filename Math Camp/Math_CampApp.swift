@@ -14,6 +14,7 @@ struct Math_CampApp: App {
     @Environment(\.scenePhase) private var scenePhase
 
     init() {
+        SoundManager.shared.prepare()
         #if DEBUG
         Task.detached(priority: .utility) { ContentValidator.logResults() }
         #endif

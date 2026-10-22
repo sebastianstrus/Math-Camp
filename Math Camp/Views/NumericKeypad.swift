@@ -84,6 +84,7 @@ struct NumericKeypad: View {
                      @ViewBuilder label: () -> some View) -> some View {
         Button {
             tapCount += 1
+            SoundManager.shared.play(.keyTap)
             onKey(key)
         } label: {
             label()

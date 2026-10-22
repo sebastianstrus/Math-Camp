@@ -7,12 +7,16 @@ import SwiftUI
 
 /// Sound, language and a way to the statistics.
 struct SettingsView: View {
-    /// Only stored for now. There is no sound playback yet.
-    @AppStorage("soundEnabled") private var soundEnabled = true
+    /// Read by `SoundManager` before every sound.
+    @AppStorage(SoundManager.enabledKey) private var soundEnabled = true
+    @Environment(PremiumAccess.self) private var premium
+    @State private var showPaywall = false
 
     var body: some View {
         ScrollView {
             VStack(spacing: 14) {
+                premiumRow
+
                 NavigationLink(value: Route.statistics) {
                     row(icon: "chart.bar.fill", titleKey: "settings.statistics", tint: Theme.blue) {
                         Image(systemName: "chevron.right")
@@ -26,6 +30,10 @@ struct SettingsView: View {
                     Toggle("settings.sound", isOn: $soundEnabled)
                         .labelsHidden()
                         .tint(Theme.correct)
+                        // A small preview, so the child hears that sound is on.
+                        .onChange(of: soundEnabled) { _, isOn in
+                            if isOn { SoundManager.shared.play(.keyTap) }
+                        }
                 }
 
                 // Placeholder until more languages are supported.
@@ -47,6 +55,27 @@ struct SettingsView: View {
         .navigationTitle(Text("settings.title"))
         .navigationBarTitleDisplayMode(.large)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        .fullScreenCover(isPresented: $showPaywall) { PaywallView() }
+    }
+
+    /// Shows whether Premium is active. When it is not, the row opens the paywall.
+    @ViewBuilder
+    private var premiumRow: some View {
+        if premium.isPremium {
+            row(icon: "checkmark.seal.fill", titleKey: "premium.status.active", tint: Theme.correct) {
+                EmptyView()
+            }
+            .accessibilityElement(children: .combine)
+        } else {
+            Button { showPaywall = true } label: {
+                row(icon: "lock.open.fill", titleKey: "premium.status.get", tint: Theme.yellow) {
+                    Image(systemName: "chevron.right")
+                        .font(Theme.font(.subheadline))
+                        .foregroundStyle(Theme.textSecondary)
+                }
+            }
+            .buttonStyle(.plain)
+        }
     }
 
     private func row<Trailing: View>(icon: String, titleKey: LocalizedStringKey, tint: Color,
