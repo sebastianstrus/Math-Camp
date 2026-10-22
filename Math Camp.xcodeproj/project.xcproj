@@ -12,6 +12,7 @@
   },
   "files": [
     { "path": "Math-Camp-Info.plist" },
+    { "path": "Products.storekit" },
     { "kind": "folder", "path": "Math Camp", "target-membership": [ "Math Camp" ] },
     {
       "kind": "group",
