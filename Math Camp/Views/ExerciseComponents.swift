@@ -147,7 +147,8 @@ struct ExerciseRow: View {
     /// Place-value rows on small devices get less padding and spacing.
     private var tightRow: Bool { isPlaceValue && NumericKeypad.isCompact(screenHeight: screenHeight) }
     private var isPlaceValue: Bool {
-        if case .placeValue = exercise.prompt { return true }
+        // Only `47 = ? × 10 + ? × 1` has two boxes; `4 × 10 + 7 × 1 = ?` has room to use the normal sizes.
+        if case .placeValue(_, _, .parts) = exercise.prompt { return true }
         return false
     }
 
