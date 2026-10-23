@@ -134,6 +134,9 @@ struct TaskView: View {
                 }
                 .scrollBounceBehavior(.basedOnSize)
             }
+            // Short screens tighten the gaps, but there is room to spare when no keypad is shown.
+            .padding(.top, NumericKeypad.isCompact(screenHeight: screenHeight)
+                     && session.activeExerciseValue?.needsKeypad == false ? 10 : 0)
         }
         .padding(.horizontal, 16)
         .padding(.top, 12)

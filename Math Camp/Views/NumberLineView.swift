@@ -26,11 +26,17 @@ struct NumberLineView: View {
     var format: (Double) -> String = { $0.formatted() }
     var onSelect: (Double) -> Void = { _ in }
 
-    @ScaledMetric(relativeTo: .body) private var height: CGFloat = 130
+    @ScaledMetric(relativeTo: .body) private var regularHeight: CGFloat = 130
+    @ScaledMetric(relativeTo: .body) private var compactHeight: CGFloat = 100
+    @Environment(\.screenHeight) private var screenHeight
     @State private var feedbackTrigger = 0
 
     private let inset: CGFloat = 26
-    private let axisFraction: CGFloat = 0.62
+
+    /// Short screens trim the empty space above the axis, leaving just room for the marker.
+    private var isCompact: Bool { NumericKeypad.isCompact(screenHeight: screenHeight) }
+    private var height: CGFloat { isCompact ? compactHeight : regularHeight }
+    private var axisFraction: CGFloat { isCompact ? 0.5 : 0.62 }
 
     var body: some View {
         GeometryReader { proxy in
