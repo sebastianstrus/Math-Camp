@@ -65,20 +65,33 @@ struct PromptLine: View {
     /// `nil` before checking.
     let isCorrect: Bool?
     let formatter: PromptFormatter
+    /// Starts one font step lower on small devices (place-value rows).
+    var shrinksOnCompact = false
     let onSelect: (Int) -> Void
+
+    @Environment(\.screenHeight) private var screenHeight
 
     var body: some View {
         // Long sentences such as `(25 + 15) − (12 + 8) = ?` drop to a smaller font instead of overflowing.
-        ViewThatFits(in: .horizontal) {
-            line(font: Theme.font(.largeTitle))
-            line(font: Theme.font(.title))
-            line(font: Theme.font(.title2))
-            line(font: Theme.font(.headline))
+        if shrinksOnCompact && NumericKeypad.isCompact(screenHeight: screenHeight) {
+            // Small devices: narrower boxes and tighter spacing so `× 10` and `× 1` are not cut off.
+            ViewThatFits(in: .horizontal) {
+                line(font: Theme.font(.title2), tight: true)
+                line(font: Theme.font(.headline), tight: true)
+                line(font: Theme.font(.subheadline), tight: true)
+            }
+        } else {
+            ViewThatFits(in: .horizontal) {
+                line(font: Theme.font(.largeTitle))
+                line(font: Theme.font(.title))
+                line(font: Theme.font(.title2))
+                line(font: Theme.font(.headline))
+            }
         }
     }
 
-    private func line(font: Font) -> some View {
-        HStack(spacing: 8) {
+    private func line(font: Font, tight: Bool = false) -> some View {
+        HStack(spacing: tight ? 4 : 8) {
             ForEach(Array(parts.enumerated()), id: \.offset) { _, part in
                 switch part {
                 case .text(let text, _):
@@ -88,7 +101,7 @@ struct PromptLine: View {
                         .lineLimit(1)
                 case .slot(let index):
                     AnswerSlot(text: slotText(index), isActive: activeSlot == index,
-                               isCorrect: isCorrect, font: font) { onSelect(index) }
+                               isCorrect: isCorrect, font: font, compact: tight) { onSelect(index) }
                 case .fraction(let numerator, let denominator):
                     VStack(spacing: 2) {
                         field(numerator, font: font)
@@ -130,21 +143,29 @@ struct ExerciseRow: View {
     private var exercise: Exercise { session.exercises[index] }
     private var isActive: Bool { session.activeExercise == index && !session.isChecked }
     private var result: Bool? { session.isChecked ? session.correctness[index] : nil }
+    @Environment(\.screenHeight) private var screenHeight
+    /// Place-value rows on small devices get less padding and spacing.
+    private var tightRow: Bool { isPlaceValue && NumericKeypad.isCompact(screenHeight: screenHeight) }
+    private var isPlaceValue: Bool {
+        if case .placeValue = exercise.prompt { return true }
+        return false
+    }
 
     var body: some View {
         let parts = formatter.parts(for: exercise.prompt)
 
-        HStack(alignment: .center, spacing: 12) {
+        HStack(alignment: .center, spacing: tightRow ? 6 : 12) {
             Text(index + 1, format: .number)
                 .font(Theme.font(.footnote))
                 .foregroundStyle(Theme.textSecondary)
-                .frame(minWidth: 24)
+                .frame(minWidth: tightRow ? 16 : 24)
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading, spacing: 4) {
                 PromptLine(parts: parts, slots: session.slots[index],
                            activeSlot: isActive ? session.activeSlot : nil,
-                           isCorrect: result, formatter: formatter) { slot in
+                           isCorrect: result, formatter: formatter,
+                           shrinksOnCompact: isPlaceValue) { slot in
                     session.select(exercise: index, slot: slot)
                 }
                 if result == false {
@@ -163,7 +184,7 @@ struct ExerciseRow: View {
                     .accessibilityHidden(true)
             }
         }
-        .padding(.horizontal, 14)
+        .padding(.horizontal, tightRow ? 8 : 14)
         .padding(.vertical, 10)
         .frame(minHeight: 72)
         .background {

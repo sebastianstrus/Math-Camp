@@ -47,16 +47,16 @@ nonisolated struct PromptFormatter: Sendable {
         case .placeValue(let tens, let ones, let ask):
             switch ask {
             case .parts:
-                // 47 = ? tens + ? ones
+                // 47 = ? × 10 + ? × 1 (symbols instead of words, so it reads the same in every language)
                 return textParts([.number(tens * 10 + ones), .equals]) + [
-                    .slot(0), unit("placevalue.tens.unit"), token(.plus),
-                    .slot(1), unit("placevalue.ones.unit"),
+                    .slot(0), timesPart(10), token(.plus),
+                    .slot(1), timesPart(1),
                 ]
             case .total:
-                // 4 tens + 7 ones = ?
+                // 4 × 10 + 7 × 1 = ?
                 return [
-                    unit("placevalue.tens.count", tens), token(.plus),
-                    unit("placevalue.ones.count", ones), token(.equals), .slot(0),
+                    number(tens), timesPart(10), token(.plus),
+                    number(ones), timesPart(1), token(.equals), .slot(0),
                 ]
             }
 
@@ -243,6 +243,13 @@ nonisolated struct PromptFormatter: Sendable {
     private func word(_ key: String) -> PromptPart {
         let text = L10n.string(key)
         return .text(text, spoken: text)
+    }
+
+    /// `× 10` or `× 1`, the place value that follows a slot or a count.
+    private func timesPart(_ factor: Int) -> PromptPart {
+        let number = factor.formatted(.number.locale(locale))
+        return .text("\(notation.symbol(for: .times, locale: locale)) \(number)",
+                     spoken: "\(notation.spoken(for: .times, locale: locale)) \(number)")
     }
 
     private func unit(_ key: String) -> PromptPart {
