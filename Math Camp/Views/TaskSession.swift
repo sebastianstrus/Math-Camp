@@ -99,8 +99,11 @@ final class TaskSession {
             guard exercise.inputKind.isNumeric else { return }
             var text = slots[e][s]
             if text.filter(\.isNumber).count >= Self.maxDigits { return }
-            // A lone zero is replaced, except in decimals ("0.5") where the zero stays.
-            if text == "0" { text = String(digit) } else if text == "-0" { text = "-" + String(digit) } else { text += String(digit) }
+            // A lone zero is replaced, except in decimals ("0.5") where the zero stays,
+            // and in whole-number answers written with a leading zero (minutes: "05").
+            let expected = exercise.answer.correctSlots[s]
+            let keepsLeadingZero = exercise.inputKind == .number && expected.hasPrefix("0") && expected.count > 1
+            if text == "0" && !keepsLeadingZero { text = String(digit) } else if text == "-0" { text = "-" + String(digit) } else { text += String(digit) }
             slots[e][s] = text
             // Move on as soon as the answer has the expected number of characters.
             if text.count == exercise.answer.correctSlots[s].count { advance() }

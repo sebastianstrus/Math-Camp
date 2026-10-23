@@ -142,12 +142,14 @@ nonisolated enum ExpectedAnswer: Hashable, Sendable {
     case multiple([Int])
     /// `.decimal(value: 75, scale: 2)` is 0.75.
     case decimal(value: Int, scale: Int)
+    /// A clock time. The minutes are typed with two digits (`8:00`, `8:05`).
+    case time(hour: Int, minute: Int)
 
     /// Number of input fields the child has to fill.
     var slotCount: Int {
         switch self {
         case .number, .comparison, .bool, .decimal: 1
-        case .quotientRemainder: 2
+        case .quotientRemainder, .time: 2
         case .multiple(let values): values.count
         }
     }
@@ -157,7 +159,7 @@ nonisolated enum ExpectedAnswer: Hashable, Sendable {
         case .comparison: .comparison
         case .bool: .boolean
         case .decimal: .decimal
-        case .number, .quotientRemainder, .multiple: .number
+        case .number, .quotientRemainder, .multiple, .time: .number
         }
     }
 
@@ -170,6 +172,7 @@ nonisolated enum ExpectedAnswer: Hashable, Sendable {
         case .bool(let value): [value ? "true" : "false"]
         case .quotientRemainder(let q, let r): [String(q), String(r)]
         case .multiple(let values): values.map(String.init)
+        case .time(let hour, let minute): [String(hour), minute < 10 ? "0\(minute)" : String(minute)]
         case .decimal(let value, let scale): [Self.decimalText(value, scale: scale)]
         }
     }
@@ -187,6 +190,7 @@ nonisolated enum ExpectedAnswer: Hashable, Sendable {
         switch self {
         case .number(let value): [value]
         case .quotientRemainder(let q, let r): [q, r]
+        case .time(let hour, let minute): [hour, minute]
         case .multiple(let values): values
         case .decimal(let value, let scale): [value / Int(pow(10, Double(scale)))]
         case .comparison, .bool: []
@@ -380,7 +384,7 @@ nonisolated extension ExercisePrompt {
             return .number(whole * percent / 100)
 
         case .clock(let hour, let minute):
-            return .multiple([hour, minute])
+            return .time(hour: hour, minute: minute)
 
         case .timeInterval(let from, let to):
             return to > from ? .number(to - from) : nil

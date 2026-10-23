@@ -348,6 +348,7 @@ nonisolated struct PromptFormatter: Sendable {
         case .comparison(let sign): notation.symbol(for: sign)
         case .bool(let value): value ? Self.checkmark : "✘"
         case .quotientRemainder(let q, let r): "\(q) \(notation.remainder) \(r)"
+        case .time(let hour, let minute): "\(hour):" + (minute < 10 ? "0\(minute)" : "\(minute)")
         case .multiple(let values): values.map { $0.formatted(.number.locale(locale)) }.joined(separator: ", ")
         case .decimal(let value, let scale): decimalText(ScaledDecimal(value: value, scale: scale))
         }
