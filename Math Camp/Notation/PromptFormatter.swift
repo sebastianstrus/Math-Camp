@@ -105,7 +105,7 @@ nonisolated struct PromptFormatter: Sendable {
             return []
 
         case .fractionOf(let f, let whole):
-            return [fraction(f), word("math.of"), number(whole), token(.equals), .slot(0)]
+            return [fraction(f), token(.times), number(whole), token(.equals), .slot(0)]
 
         case .fractionArithmetic(let a, let b, let operation, let common):
             return [fraction(a), token(operation.token), fraction(b), token(.equals),
@@ -126,7 +126,7 @@ nonisolated struct PromptFormatter: Sendable {
         case .percentOf(let percent, let whole):
             let text = (Double(percent) / 100).formatted(.percent.locale(locale))
             let spoken = L10n.format("math.spoken.percent", text)
-            return [.text(text, spoken: spoken), word("math.of"), number(whole), token(.equals), .slot(0)]
+            return [.text(text, spoken: spoken), token(.times), number(whole), token(.equals), .slot(0)]
 
         case .clock:
             return [.slot(0), .text(":", spoken: ""), .slot(1)]
@@ -238,11 +238,6 @@ nonisolated struct PromptFormatter: Sendable {
     private func signedPart(_ value: Int, display: String) -> PromptPart {
         let spoken = value < 0 ? L10n.format("math.spoken.negative", abs(value)) : display
         return .text(display, spoken: spoken)
-    }
-
-    private func word(_ key: String) -> PromptPart {
-        let text = L10n.string(key)
-        return .text(text, spoken: text)
     }
 
     /// `× 10` or `× 1`, the place value that follows a slot or a count.
