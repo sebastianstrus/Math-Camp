@@ -119,7 +119,12 @@ final class TaskSession {
             slots[e][s].removeLast()
 
         case .next:
-            advance()
+            // In interactive tasks (one exercise per page) the arrow also turns to the next page.
+            if category.style != .drill, activeSlot + 1 >= exercise.slotCount, e + 1 < exercises.count {
+                go(to: e + 1)
+            } else {
+                advance()
+            }
 
         case .sign(let sign):
             guard exercise.inputKind == .comparison else { return }
