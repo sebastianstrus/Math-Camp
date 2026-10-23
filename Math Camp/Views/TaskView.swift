@@ -134,13 +134,22 @@ struct TaskView: View {
                 }
                 .scrollBounceBehavior(.basedOnSize)
             }
-            // Short screens tighten the gaps, but there is room to spare when no keypad is shown.
-            .padding(.top, NumericKeypad.isCompact(screenHeight: screenHeight)
-                     && session.activeExerciseValue?.needsKeypad == false ? 10 : 0)
+            // Short screens tighten the gaps, but there is room to spare when no keypad is shown
+            // or the card is a single short row (number patterns).
+            .padding(.top, NumericKeypad.isCompact(screenHeight: screenHeight) && hasRoomToSpare ? 10 : 0)
         }
         .padding(.horizontal, 16)
         .padding(.top, 12)
         .readableContent()
+    }
+
+    /// Exercises whose card is short enough to leave space under the progress bar.
+    private var hasRoomToSpare: Bool {
+        guard let exercise = session.activeExerciseValue else { return false }
+        switch exercise.prompt {
+        case .sequence, .rulePattern: return true
+        default: return !exercise.needsKeypad
+        }
     }
 
     private func pagerButton(systemImage: String, label: LocalizedStringKey, target: Int) -> some View {
