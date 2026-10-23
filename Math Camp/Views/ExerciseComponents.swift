@@ -94,22 +94,22 @@ struct PromptLine: View {
         }
     }
 
-    /// Rows with four or more boxes (`5 × 3 = ? + ? + ? + ? + ?`) never fit on one line, so the last
-    /// resort puts the text before the first box on its own line above the boxes.
+    /// Long rows (`5 × 3 = ? + ? + ? + ? + ?`, `4 + 4 + 4 + 4 + 4 + 4 = ? × 4`) do not fit on one line
+    /// even in the smallest font, so the last resort breaks the row after the first `=`.
     private var splitIndex: Int? {
-        let slotCount = parts.filter { if case .slot = $0 { true } else { false } }.count
-        guard slotCount >= 4,
-              let first = parts.firstIndex(where: { if case .slot = $0 { true } else { false } }),
-              first > 0 else { return nil }
-        return first
+        let equals = formatter.notation.symbol(for: .equals, locale: formatter.locale)
+        guard let index = parts.firstIndex(where: { if case .text(let text, _) = $0 { text == equals } else { false } }),
+              index + 1 < parts.count else { return nil }
+        return index + 1
     }
 
     @ViewBuilder
     private var twoLines: some View {
         if let split = splitIndex {
+            let slotCount = parts.filter { if case .slot = $0 { true } else { false } }.count
             VStack(spacing: 6) {
-                row(parts[..<split], font: Theme.font(.title2), tight: true)
-                row(parts[split...], font: Theme.font(.title3), tight: true, narrow: true)
+                row(parts[..<split], font: Theme.font(.title3), tight: true)
+                row(parts[split...], font: Theme.font(.title3), tight: true, narrow: slotCount >= 4)
             }
         }
     }
