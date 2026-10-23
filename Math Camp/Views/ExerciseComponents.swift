@@ -14,6 +14,8 @@ struct AnswerSlot: View {
     var font: Font = Theme.equationFont
     /// A narrower box, for rows with many boxes (sequences).
     var compact = false
+    /// Narrower still, for rows of five boxes such as `? + ? + ? + ? + ?`.
+    var narrow = false
     let action: () -> Void
 
     @ScaledMetric(relativeTo: .largeTitle) private var minWidth: CGFloat = 64
@@ -26,8 +28,9 @@ struct AnswerSlot: View {
                 .foregroundStyle(Theme.textPrimary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
-                .padding(.horizontal, compact ? 6 : 10)
-                .frame(minWidth: compact ? minWidth * 0.75 : minWidth, minHeight: max(minHeight, Theme.minTouch))
+                .padding(.horizontal, narrow ? 3 : (compact ? 6 : 10))
+                .frame(minWidth: narrow ? minWidth * 0.6 : (compact ? minWidth * 0.75 : minWidth),
+                       minHeight: max(minHeight, Theme.minTouch))
                 .background(fill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .overlay {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -86,13 +89,38 @@ struct PromptLine: View {
                 line(font: Theme.font(.title))
                 line(font: Theme.font(.title2))
                 line(font: Theme.font(.headline))
+                if splitIndex != nil { twoLines }
+            }
+        }
+    }
+
+    /// Rows with four or more boxes (`5 × 3 = ? + ? + ? + ? + ?`) never fit on one line, so the last
+    /// resort puts the text before the first box on its own line above the boxes.
+    private var splitIndex: Int? {
+        let slotCount = parts.filter { if case .slot = $0 { true } else { false } }.count
+        guard slotCount >= 4,
+              let first = parts.firstIndex(where: { if case .slot = $0 { true } else { false } }),
+              first > 0 else { return nil }
+        return first
+    }
+
+    @ViewBuilder
+    private var twoLines: some View {
+        if let split = splitIndex {
+            VStack(spacing: 6) {
+                row(parts[..<split], font: Theme.font(.title2), tight: true)
+                row(parts[split...], font: Theme.font(.title3), tight: true, narrow: true)
             }
         }
     }
 
     private func line(font: Font, tight: Bool = false) -> some View {
+        row(parts[...], font: font, tight: tight)
+    }
+
+    private func row(_ slice: ArraySlice<PromptPart>, font: Font, tight: Bool, narrow: Bool = false) -> some View {
         HStack(spacing: tight ? 4 : 8) {
-            ForEach(Array(parts.enumerated()), id: \.offset) { _, part in
+            ForEach(Array(slice.enumerated()), id: \.offset) { _, part in
                 switch part {
                 case .text(let text, _):
                     Text(text)
@@ -101,7 +129,7 @@ struct PromptLine: View {
                         .lineLimit(1)
                 case .slot(let index):
                     AnswerSlot(text: slotText(index), isActive: activeSlot == index,
-                               isCorrect: isCorrect, font: font, compact: tight) { onSelect(index) }
+                               isCorrect: isCorrect, font: font, compact: tight, narrow: narrow) { onSelect(index) }
                 case .fraction(let numerator, let denominator):
                     VStack(spacing: 2) {
                         field(numerator, font: font)
