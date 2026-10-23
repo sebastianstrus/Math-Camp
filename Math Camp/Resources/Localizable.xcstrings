@@ -2705,17 +2705,6 @@
         }
       }
     },
-    "premium.legal": {
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Subscriptions renew automatically unless they are cancelled at least 24 hours before the end of the current period. You can manage or cancel them in your Apple Account settings."
-          }
-        }
-      }
-    },
     "premium.period.lifetime": {
       "extractionState": "manual",
       "localizations": {

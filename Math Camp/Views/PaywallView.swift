@@ -12,6 +12,10 @@ struct PaywallView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var selectedID: String?
+    /// True on short screens (e.g. iPhone SE), where text and spacing shrink so the whole offer fits.
+    @State private var isCompact = false
+
+    private static let compactHeight: CGFloat = 700
 
     private var selectedProduct: Product? {
         premium.products.first { $0.id == selectedID }
@@ -24,7 +28,7 @@ struct PaywallView: View {
             TrailBackground()
 
             ScrollView {
-                VStack(spacing: 22) {
+                VStack(spacing: isCompact ? 16 : 22) {
                     header
                     benefits
 
@@ -39,11 +43,16 @@ struct PaywallView: View {
                         offer
                     }
                 }
-                .padding(24)
+                .padding(isCompact ? 20 : 24)
                 .frame(maxWidth: 520)
                 .frame(maxWidth: .infinity)
             }
             .scrollBounceBehavior(.basedOnSize)
+        }
+        .onGeometryChange(for: Bool.self) { proxy in
+            proxy.size.height < Self.compactHeight
+        } action: { compact in
+            isCompact = compact
         }
         .overlay(alignment: .topTrailing) {
             Button { dismiss() } label: {
@@ -53,7 +62,7 @@ struct PaywallView: View {
                     .frame(width: 44, height: 44)
                     .background(Color.white.opacity(0.16), in: Circle())
             }
-            .padding(16)
+            .padding(isCompact ? 8 : 16)
             .accessibilityLabel(Text("common.close"))
         }
         .task {
@@ -67,38 +76,38 @@ struct PaywallView: View {
     // MARK: Header and benefits
 
     private var header: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: isCompact ? 6 : 10) {
             Image(systemName: "mountain.2.fill")
-                .font(.system(size: 54))
+                .font(.system(size: isCompact ? 40 : 54))
                 .foregroundStyle(Theme.sunset)
                 .accessibilityHidden(true)
             Text("premium.title")
-                .font(Theme.font(.largeTitle))
+                .font(Theme.font(isCompact ? .title2 : .largeTitle))
                 .foregroundStyle(Theme.textPrimary)
                 .multilineTextAlignment(.center)
             Text("premium.subtitle")
-                .font(Theme.font(.body, weight: .medium))
+                .font(Theme.font(isCompact ? .subheadline : .body, weight: .medium))
                 .foregroundStyle(Theme.textSecondary)
                 .multilineTextAlignment(.center)
         }
-        .padding(.top, 24)
+        .padding(.top, isCompact ? 12 : 24)
     }
 
     private var benefits: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: isCompact ? 9 : 12) {
             benefit("premium.benefit.1")
             benefit("premium.benefit.2")
             benefit("premium.benefit.3")
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(18)
+        .padding(isCompact ? 16 : 18)
         .themeCard()
     }
 
     private func benefit(_ key: LocalizedStringKey) -> some View {
         Label {
             Text(key)
-                .font(Theme.font(.body, weight: .medium))
+                .font(Theme.font(isCompact ? .subheadline : .body, weight: .medium))
                 .foregroundStyle(Theme.textPrimary)
         } icon: {
             Image(systemName: "checkmark.circle.fill").foregroundStyle(Theme.correct)
@@ -151,12 +160,7 @@ struct PaywallView: View {
         Button("premium.restore") { Task { await premium.restorePurchases() } }
             .font(Theme.font(.subheadline))
             .foregroundStyle(Theme.textSecondary)
-            .frame(minHeight: Theme.minTouch)
-
-        Text("premium.legal")
-            .font(Theme.font(.caption2, weight: .medium))
-            .foregroundStyle(Theme.textSecondary.opacity(0.8))
-            .multilineTextAlignment(.center)
+            .frame(minHeight: isCompact ? 40 : Theme.minTouch)
     }
 
     private func plan(_ product: Product) -> some View {
@@ -166,39 +170,29 @@ struct PaywallView: View {
         return Button {
             selectedID = product.id
         } label: {
-            HStack(spacing: 14) {
+            HStack(spacing: isCompact ? 10 : 14) {
                 Image(systemName: isSelected ? "largecircle.fill.circle" : "circle")
-                    .font(.title3)
+                    .font(isCompact ? .body : .title3)
                     .foregroundStyle(isSelected ? Theme.yellow : Theme.textSecondary)
                     .accessibilityHidden(true)
 
                 VStack(alignment: .leading, spacing: 2) {
-                    HStack(spacing: 8) {
-                        Text(product.displayName)
-                            .font(Theme.font(.headline))
-                            .foregroundStyle(Theme.textPrimary)
-                        if kind == .yearly {
-                            Text("premium.badge.best")
-                                .font(Theme.font(.caption2))
-                                .foregroundStyle(Theme.navyDeep)
-                                .padding(.horizontal, 8)
-                                .padding(.vertical, 2)
-                                .background(Theme.yellow, in: Capsule())
-                        }
-                    }
+                    Text(product.displayName)
+                        .font(Theme.font(isCompact ? .subheadline : .headline))
+                        .foregroundStyle(Theme.textPrimary)
                     Text(LocalizedStringKey(periodKey(for: kind)))
-                        .font(Theme.font(.caption, weight: .medium))
+                        .font(Theme.font(isCompact ? .caption2 : .caption, weight: .medium))
                         .foregroundStyle(Theme.textSecondary)
                 }
 
                 Spacer(minLength: 8)
 
                 Text(product.displayPrice)
-                    .font(Theme.font(.title3))
+                    .font(Theme.font(isCompact ? .headline : .title3))
                     .foregroundStyle(Theme.textPrimary)
             }
-            .padding(16)
-            .frame(maxWidth: .infinity, minHeight: 64)
+            .padding(isCompact ? 13 : 16)
+            .frame(maxWidth: .infinity, minHeight: isCompact ? 56 : 64)
             .background {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                     .fill(Color.white.opacity(isSelected ? 0.16 : 0.07))
@@ -207,6 +201,18 @@ struct PaywallView: View {
                             .strokeBorder(isSelected ? Theme.yellow : Color.white.opacity(0.16),
                                           lineWidth: isSelected ? 2.5 : 1)
                     }
+            }
+            // The badge sits on the card's top edge so it doesn't make the card taller.
+            .overlay(alignment: .topTrailing) {
+                if kind == .yearly {
+                    Text("premium.badge.best")
+                        .font(Theme.font(.caption2))
+                        .foregroundStyle(Theme.navyDeep)
+                        .padding(.horizontal, 8)
+                        .padding(.vertical, 2)
+                        .background(Theme.yellow, in: Capsule())
+                        .offset(x: -16, y: -7)
+                }
             }
         }
         .buttonStyle(.plain)
