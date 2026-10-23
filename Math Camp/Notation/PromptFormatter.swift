@@ -285,12 +285,16 @@ nonisolated struct PromptFormatter: Sendable {
 
     // MARK: Slot content
 
+    /// ✔ with U+FE0E, which asks for the plain text glyph; without it the checkmark can be drawn
+    /// as a dark emoji that ignores the text color.
+    static let checkmark = "✔\u{FE0E}"
+
     /// What a filled slot shows: digits (with the locale's minus sign and decimal separator),
     /// `<` `=` `>`, or ✔ / ✘.
     func display(slot value: String) -> String {
         switch value {
         case "<", "=", ">": return value
-        case "true": return "✔"
+        case "true": return Self.checkmark
         case "false": return "✘"
         default:
             return String(value.map { character -> String in
@@ -347,7 +351,7 @@ nonisolated struct PromptFormatter: Sendable {
         switch answer {
         case .number(let value): signedText(value)
         case .comparison(let sign): notation.symbol(for: sign)
-        case .bool(let value): value ? "✔" : "✘"
+        case .bool(let value): value ? Self.checkmark : "✘"
         case .quotientRemainder(let q, let r): "\(q) \(notation.remainder) \(r)"
         case .multiple(let values): values.map { $0.formatted(.number.locale(locale)) }.joined(separator: ", ")
         case .decimal(let value, let scale): decimalText(ScaledDecimal(value: value, scale: scale))
