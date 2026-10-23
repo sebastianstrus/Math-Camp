@@ -5,6 +5,18 @@
 
 import SwiftUI
 
+private struct ScreenHeightKey: EnvironmentKey {
+    static let defaultValue: CGFloat? = nil
+}
+
+extension EnvironmentValues {
+    /// Height of the screen content, so the keypad can use shorter keys on small phones.
+    var screenHeight: CGFloat? {
+        get { self[ScreenHeightKey.self] }
+        set { self[ScreenHeightKey.self] = newValue }
+    }
+}
+
 /// Our own big-button keypad (the system keyboard is never shown).
 /// Shows digits, the `<` `=` `>` keys, or ✔ / ✘, depending on what the active exercise expects.
 struct NumericKeypad: View {
@@ -12,7 +24,20 @@ struct NumericKeypad: View {
     let onKey: (KeypadKey) -> Void
 
     @Environment(\.mathNotation) private var notation
-    @ScaledMetric(relativeTo: .title) private var keyHeight: CGFloat = 60
+    @ScaledMetric(relativeTo: .title) private var baseKeyHeight: CGFloat = 60
+    @Environment(\.screenHeight) private var screenHeight
+
+    /// True on short screens (iPhone SE and similar), where the layout is tightened to avoid scrolling.
+    static func isCompact(screenHeight: CGFloat?) -> Bool {
+        (screenHeight ?? .infinity) < 750
+    }
+
+    /// Full height on large phones, down to 72% (never below the 44pt touch target) on an iPhone SE.
+    private var keyHeight: CGFloat {
+        guard let screenHeight else { return baseKeyHeight }
+        let progress = min(max((screenHeight - 667) / (900 - 667), 0), 1)
+        return max(baseKeyHeight * (0.72 + 0.28 * progress), 44)
+    }
     @State private var tapCount = 0
 
     var body: some View {

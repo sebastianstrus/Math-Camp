@@ -89,6 +89,8 @@ extension View {
 
 /// Big warm call-to-action button.
 struct PrimaryButtonStyle: ButtonStyle {
+    var minHeight: CGFloat = 56
+
     @Environment(\.isEnabled) private var isEnabled
 
     func makeBody(configuration: Configuration) -> some View {
@@ -96,7 +98,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             .font(Theme.font(.title3))
             .foregroundStyle(Theme.navyDeep)
             .padding(.horizontal, 24)
-            .frame(maxWidth: .infinity, minHeight: 56)
+            .frame(maxWidth: .infinity, minHeight: minHeight)
             .background {
                 Capsule().fill(Theme.sunset)
                     .shadow(color: Theme.orange.opacity(0.4), radius: 10, y: 4)

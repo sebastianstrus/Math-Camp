@@ -27,6 +27,8 @@ struct TaskView: View {
         _session = State(initialValue: TaskSession(category: category, taskNumber: taskNumber))
     }
 
+    @State private var screenHeight: CGFloat?
+
     private var formatter: PromptFormatter { PromptFormatter(notation: notation, locale: locale) }
     private var tier: Tier { Tier.tier(forTask: taskNumber) }
     private var hasNextTask: Bool { taskNumber < ContentCatalog.tasksPerCategory }
@@ -57,6 +59,8 @@ struct TaskView: View {
         .toolbarColorScheme(.dark, for: .navigationBar)
         .fullScreenCover(isPresented: $showPremium) { PaywallView() }
         .sensoryFeedback(.success, trigger: session.isChecked) { _, checked in checked && session.stars >= 2 }
+        .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { screenHeight = $0 }
+        .environment(\.screenHeight, screenHeight)
     }
 
     // MARK: Header
@@ -103,7 +107,7 @@ struct TaskView: View {
         let index = session.activeExercise
         let answered = session.exercises.indices.filter { session.isAnswered($0) }.count
 
-        return VStack(spacing: 14) {
+        return VStack(spacing: NumericKeypad.isCompact(screenHeight: screenHeight) ? 8 : 14) {
             header
 
             HStack(spacing: 12) {
@@ -119,14 +123,17 @@ struct TaskView: View {
                 pagerButton(systemImage: "chevron.right", label: "task.next", target: index + 1)
             }
 
-            ScrollView {
-                if session.exercises.indices.contains(index) {
-                    InteractiveExerciseView(session: session, index: index, formatter: formatter)
-                        .id(index)
-                        .transition(.opacity)
+            GeometryReader { proxy in
+                ScrollView {
+                    if session.exercises.indices.contains(index) {
+                        InteractiveExerciseView(session: session, index: index, formatter: formatter)
+                            .id(index)
+                            .transition(.opacity)
+                            .environment(\.exerciseArea, proxy.size)
+                    }
                 }
+                .scrollBounceBehavior(.basedOnSize)
             }
-            .scrollBounceBehavior(.basedOnSize)
         }
         .padding(.horizontal, 16)
         .padding(.top, 12)
@@ -151,12 +158,12 @@ struct TaskView: View {
     // MARK: Bottom panel (Check + keypad, or the result actions)
 
     private var bottomPanel: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: NumericKeypad.isCompact(screenHeight: screenHeight) ? 8 : 12) {
             if session.isChecked {
                 checkedActions
             } else {
                 Button("task.check", action: check)
-                    .buttonStyle(PrimaryButtonStyle())
+                    .buttonStyle(PrimaryButtonStyle(minHeight: NumericKeypad.isCompact(screenHeight: screenHeight) ? Theme.minTouch : 56))
                     .disabled(!session.isComplete)
                     .frame(maxWidth: 520)
 
@@ -166,7 +173,7 @@ struct TaskView: View {
             }
         }
         .padding(.horizontal, 16)
-        .padding(.top, 14)
+        .padding(.top, NumericKeypad.isCompact(screenHeight: screenHeight) ? 10 : 14)
         .padding(.bottom, 8)
         .frame(maxWidth: .infinity)
         .background {

@@ -12,11 +12,14 @@ struct InteractiveExerciseView: View {
     let index: Int
     let formatter: PromptFormatter
 
+    @Environment(\.screenHeight) private var screenHeight
+
+    private var isCompact: Bool { NumericKeypad.isCompact(screenHeight: screenHeight) }
     private var exercise: Exercise { session.exercises[index] }
     private var result: Bool? { session.isChecked ? session.correctness[index] : nil }
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: isCompact ? 10 : 20) {
             instruction
                 .font(Theme.font(.headline, weight: .semibold))
                 .foregroundStyle(Theme.textSecondary)
@@ -30,7 +33,7 @@ struct InteractiveExerciseView: View {
                     .foregroundStyle(Theme.correct)
             }
         }
-        .padding(20)
+        .padding(isCompact ? 12 : 20)
         .frame(maxWidth: .infinity)
         .themeCard()
     }
