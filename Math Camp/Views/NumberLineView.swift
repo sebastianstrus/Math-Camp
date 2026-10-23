@@ -124,7 +124,7 @@ struct NumberLineView: View {
 
             if isLabelled {
                 let label = context.resolve(
-                    Text(format(value)).font(Theme.font(.callout)).foregroundStyle(Color.white))
+                    Text(format(value)).font(Theme.font(isCompact ? .footnote : .callout)).foregroundStyle(Color.white))
                 context.draw(label, at: CGPoint(x: position, y: axisY + 18), anchor: .top)
             }
         }
