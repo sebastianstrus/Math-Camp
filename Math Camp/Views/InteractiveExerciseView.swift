@@ -149,9 +149,14 @@ struct InteractiveExerciseView: View {
     private var line: some View {
         PromptLine(parts: formatter.parts(for: exercise.prompt), slots: session.slots[index],
                    activeSlot: session.isChecked ? nil : session.activeSlot,
-                   isCorrect: result, formatter: formatter) { slot in
+                   isCorrect: result, formatter: formatter, labelOnOwnLine: isRounding) { slot in
             session.select(exercise: index, slot: slot)
         }
+    }
+
+    private var isRounding: Bool {
+        if case .rounding = exercise.prompt { return true }
+        return false
     }
 
     private func slot(_ slotIndex: Int, compact: Bool = false) -> some View {

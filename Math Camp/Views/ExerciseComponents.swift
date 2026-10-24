@@ -70,13 +70,20 @@ struct PromptLine: View {
     let formatter: PromptFormatter
     /// Starts one font step lower on small devices (place-value rows).
     var shrinksOnCompact = false
+    /// Puts the leading label on its own line (`Round to the nearest 10:`).
+    var labelOnOwnLine = false
     let onSelect: (Int) -> Void
 
     @Environment(\.screenHeight) private var screenHeight
 
     var body: some View {
-        // Long sentences such as `(25 + 15) − (12 + 8) = ?` drop to a smaller font instead of overflowing.
-        if shrinksOnCompact && NumericKeypad.isCompact(screenHeight: screenHeight) {
+        if labelOnOwnLine, parts.count > 1 {
+            ViewThatFits(in: .horizontal) {
+                labelLines(font: Theme.font(.title2))
+                labelLines(font: Theme.font(.headline))
+                labelLines(font: Theme.font(.subheadline))
+            }
+        } else if shrinksOnCompact && NumericKeypad.isCompact(screenHeight: screenHeight) {
             // Small devices: narrower boxes and tighter spacing so `× 10` and `× 1` are not cut off.
             ViewThatFits(in: .horizontal) {
                 line(font: Theme.font(.title2), tight: true)
@@ -115,6 +122,13 @@ struct PromptLine: View {
                 row(parts[..<split], font: font, tight: true)
                 row(parts[split...], font: font, tight: true, narrow: forceNarrow || slotCount >= 4)
             }
+        }
+    }
+
+    private func labelLines(font: Font) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            row(parts[..<1], font: font, tight: true)
+            row(parts[1...], font: font, tight: true)
         }
     }
 
@@ -178,6 +192,10 @@ struct ExerciseRow: View {
     @Environment(\.screenHeight) private var screenHeight
     /// Place-value rows on small devices get less padding and spacing.
     private var tightRow: Bool { isPlaceValue && NumericKeypad.isCompact(screenHeight: screenHeight) }
+    private var isRounding: Bool {
+        if case .rounding = exercise.prompt { return true }
+        return false
+    }
     private var isPlaceValue: Bool {
         // `4 × 10 + 7 × 1 = ?` has room to use the normal sizes; the others are wide.
         switch exercise.prompt {
@@ -200,7 +218,7 @@ struct ExerciseRow: View {
                 PromptLine(parts: parts, slots: session.slots[index],
                            activeSlot: isActive ? session.activeSlot : nil,
                            isCorrect: result, formatter: formatter,
-                           shrinksOnCompact: isPlaceValue) { slot in
+                           shrinksOnCompact: isPlaceValue, labelOnOwnLine: isRounding) { slot in
                     session.select(exercise: index, slot: slot)
                 }
                 if result == false {
