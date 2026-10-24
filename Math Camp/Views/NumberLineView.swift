@@ -28,6 +28,8 @@ struct NumberLineView: View {
 
     @ScaledMetric(relativeTo: .body) private var regularHeight: CGFloat = 130
     @ScaledMetric(relativeTo: .body) private var compactHeight: CGFloat = 100
+    /// Slightly below the smallest text style (11 pt), for crowded labels on small devices.
+    @ScaledMetric(relativeTo: .caption2) private var crowdedLabelSize: CGFloat = 10
     @Environment(\.screenHeight) private var screenHeight
     @State private var feedbackTrigger = 0
 
@@ -110,6 +112,7 @@ struct NumberLineView: View {
         context.stroke(axis, with: .color(.white.opacity(0.85)), style: StrokeStyle(lineWidth: 4, lineCap: .round))
 
         let tickCount = Int(((upper - lower) / tickStep).rounded())
+        let labelFont = labelFont(width: width)
         for i in 0...tickCount {
             let value = lower + Double(i) * tickStep
             let position = x(for: value, width: width)
@@ -124,10 +127,20 @@ struct NumberLineView: View {
 
             if isLabelled {
                 let label = context.resolve(
-                    Text(format(value)).font(Theme.font(isCompact ? .footnote : .callout)).foregroundStyle(Color.white))
+                    Text(format(value)).font(labelFont).foregroundStyle(Color.white))
                 context.draw(label, at: CGPoint(x: position, y: axisY + 18), anchor: .top)
             }
         }
+    }
+
+    /// Labels like `100 … 1 000` would run into each other on a narrow line, so they get smaller there.
+    private func labelFont(width: CGFloat) -> Font {
+        guard isCompact else { return Theme.font(.callout) }
+        let labelCount = max((upper - lower) / labelStep, 1)
+        let spacing = width / CGFloat(labelCount)
+        let longest = max(format(lower).count, format(upper).count)
+        // Roughly 8 points per character at footnote size.
+        return spacing < CGFloat(longest) * 8 ? .system(size: crowdedLabelSize, weight: .bold, design: .rounded) : Theme.font(.footnote)
     }
 
     /// A round head with a short stem pointing at the tick.

@@ -188,7 +188,8 @@ struct InteractiveExerciseView: View {
             markerColor: mode == .place ? markerColor : Theme.orange,
             revealed: (mode == .place && result == false) ? Double(target) : nil,
             isInteractive: mode == .place && !session.isChecked,
-            format: { Int($0).formatted(.number.locale(formatter.locale)) }
+            // No thousands separator: on a narrow line the `1` of `1 000` reads as part of `900`.
+            format: { Int($0).formatted(.number.grouping(.never).locale(formatter.locale)) }
         ) { value in
             session.setSlot(String(Int(value)), exercise: index)
         }
