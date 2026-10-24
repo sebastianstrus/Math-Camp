@@ -82,6 +82,8 @@ struct PromptLine: View {
                 line(font: Theme.font(.title2), tight: true)
                 line(font: Theme.font(.headline), tight: true)
                 line(font: Theme.font(.subheadline), tight: true)
+                // `979 = ? × 100 + ? × 10 + ? × 1` is too wide for one line: the sum goes on a second line.
+                if splitIndex != nil { twoLines(font: Theme.font(.subheadline), forceNarrow: true) }
             }
         } else {
             ViewThatFits(in: .horizontal) {
@@ -89,7 +91,7 @@ struct PromptLine: View {
                 line(font: Theme.font(.title))
                 line(font: Theme.font(.title2))
                 line(font: Theme.font(.headline))
-                if splitIndex != nil { twoLines }
+                if splitIndex != nil { twoLines() }
             }
         }
     }
@@ -106,12 +108,12 @@ struct PromptLine: View {
     }
 
     @ViewBuilder
-    private var twoLines: some View {
+    private func twoLines(font: Font = Theme.font(.title3), forceNarrow: Bool = false) -> some View {
         if let split = splitIndex {
             let slotCount = parts.filter { if case .slot = $0 { true } else { false } }.count
             VStack(spacing: 6) {
-                row(parts[..<split], font: Theme.font(.title3), tight: true)
-                row(parts[split...], font: Theme.font(.title3), tight: true, narrow: slotCount >= 4)
+                row(parts[..<split], font: font, tight: true)
+                row(parts[split...], font: font, tight: true, narrow: forceNarrow || slotCount >= 4)
             }
         }
     }
@@ -177,9 +179,11 @@ struct ExerciseRow: View {
     /// Place-value rows on small devices get less padding and spacing.
     private var tightRow: Bool { isPlaceValue && NumericKeypad.isCompact(screenHeight: screenHeight) }
     private var isPlaceValue: Bool {
-        // Only `47 = ? × 10 + ? × 1` has two boxes; `4 × 10 + 7 × 1 = ?` has room to use the normal sizes.
-        if case .placeValue(_, _, .parts) = exercise.prompt { return true }
-        return false
+        // `4 × 10 + 7 × 1 = ?` has room to use the normal sizes; the others are wide.
+        switch exercise.prompt {
+        case .placeValue(_, _, .parts), .placeValueHTO: return true
+        default: return false
+        }
     }
 
     var body: some View {

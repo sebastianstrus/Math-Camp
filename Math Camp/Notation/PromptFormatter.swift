@@ -64,15 +64,16 @@ nonisolated struct PromptFormatter: Sendable {
             switch ask {
             case .parts:
                 return textParts([.number(hundreds * 100 + tens * 10 + ones), .equals]) + [
-                    .slot(0), unit("placevalue.hundreds.unit"), token(.plus),
-                    .slot(1), unit("placevalue.tens.unit"), token(.plus),
-                    .slot(2), unit("placevalue.ones.unit"),
+                    .slot(0), timesPart(100), token(.plus),
+                    .slot(1), timesPart(10), token(.plus),
+                    .slot(2), timesPart(1),
                 ]
             case .total:
+                // 3 × 100 + 4 × 10 + 7 × 1 = ?
                 return [
-                    unit("placevalue.hundreds.count", hundreds), token(.plus),
-                    unit("placevalue.tens.count", tens), token(.plus),
-                    unit("placevalue.ones.count", ones), token(.equals), .slot(0),
+                    number(hundreds), timesPart(100), token(.plus),
+                    number(tens), timesPart(10), token(.plus),
+                    number(ones), timesPart(1), token(.equals), .slot(0),
                 ]
             }
 
