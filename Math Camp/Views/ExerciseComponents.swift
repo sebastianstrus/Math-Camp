@@ -70,11 +70,13 @@ struct PromptLine: View {
     let formatter: PromptFormatter
     /// Starts one font step lower on small devices (place-value rows).
     var shrinksOnCompact = false
-    /// Puts the leading label on its own line (`Round to the nearest 10:`).
+    /// Puts the leading label on its own line (`Round to the nearest 10:`, `Estimate, rounding to 10:`).
     var labelOnOwnLine = false
     let onSelect: (Int) -> Void
 
     @Environment(\.screenHeight) private var screenHeight
+
+    private var isCompactScreen: Bool { NumericKeypad.isCompact(screenHeight: screenHeight) }
 
     var body: some View {
         if labelOnOwnLine, parts.count > 1 {
@@ -97,7 +99,10 @@ struct PromptLine: View {
                 line(font: Theme.font(.largeTitle))
                 line(font: Theme.font(.title))
                 line(font: Theme.font(.title2))
+                // Small devices: tighter spacing keeps long expressions like `(51 + 54) × 4 − 30 = ?` on one line.
+                if isCompactScreen { line(font: Theme.font(.title2), tight: true) }
                 line(font: Theme.font(.headline))
+                if isCompactScreen { line(font: Theme.font(.headline), tight: true) }
                 if splitIndex != nil { twoLines() }
             }
         }
@@ -192,9 +197,11 @@ struct ExerciseRow: View {
     @Environment(\.screenHeight) private var screenHeight
     /// Place-value rows on small devices get less padding and spacing.
     private var tightRow: Bool { isPlaceValue && NumericKeypad.isCompact(screenHeight: screenHeight) }
-    private var isRounding: Bool {
-        if case .rounding = exercise.prompt { return true }
-        return false
+    private var hasLabelLine: Bool {
+        switch exercise.prompt {
+        case .rounding, .estimation: return true
+        default: return false
+        }
     }
     private var isPlaceValue: Bool {
         // `4 × 10 + 7 × 1 = ?` has room to use the normal sizes; the others are wide.
@@ -218,7 +225,7 @@ struct ExerciseRow: View {
                 PromptLine(parts: parts, slots: session.slots[index],
                            activeSlot: isActive ? session.activeSlot : nil,
                            isCorrect: result, formatter: formatter,
-                           shrinksOnCompact: isPlaceValue, labelOnOwnLine: isRounding) { slot in
+                           shrinksOnCompact: isPlaceValue, labelOnOwnLine: hasLabelLine) { slot in
                     session.select(exercise: index, slot: slot)
                 }
                 if result == false {
