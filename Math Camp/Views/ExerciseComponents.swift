@@ -97,9 +97,11 @@ struct PromptLine: View {
     /// Long rows (`5 × 3 = ? + ? + ? + ? + ?`, `4 + 4 + 4 + 4 + 4 + 4 = ? × 4`) do not fit on one line
     /// even in the smallest font, so the last resort breaks the row after the first `=`.
     private var splitIndex: Int? {
+        // `3 × x + 18 = 48, x = ?` breaks after the comma, so the equation stays together.
+        let separator = parts.firstIndex(where: { if case .text(",", _) = $0 { true } else { false } })
         let equals = formatter.notation.symbol(for: .equals, locale: formatter.locale)
-        guard let index = parts.firstIndex(where: { if case .text(let text, _) = $0 { text == equals } else { false } }),
-              index + 1 < parts.count else { return nil }
+        let index = separator ?? parts.firstIndex(where: { if case .text(let text, _) = $0 { text == equals } else { false } })
+        guard let index, index + 1 < parts.count else { return nil }
         return index + 1
     }
 

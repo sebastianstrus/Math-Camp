@@ -178,6 +178,10 @@ nonisolated enum ExpectedAnswer: Hashable, Sendable {
     }
 
     func isCorrect(slots: [String]) -> Bool {
+        // Minutes may be typed with or without the leading zero: `0` and `00` are both 8:00.
+        if case .time(let hour, let minute) = self {
+            return slots.count == 2 && Int(slots[0]) == hour && Int(slots[1]) == minute
+        }
         if case .decimal(let value, let scale) = self {
             guard slots.count == 1, let typed = Self.scaledValue(of: slots[0], scale: scale) else { return false }
             return typed == value
