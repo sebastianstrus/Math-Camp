@@ -16,6 +16,8 @@ struct AnswerSlot: View {
     var compact = false
     /// Narrower still, for rows of five boxes such as `? + ? + ? + ? + ?`.
     var narrow = false
+    /// Grows to share the row's width equally with its siblings (sequences).
+    var expands = false
     let action: () -> Void
 
     @ScaledMetric(relativeTo: .largeTitle) private var minWidth: CGFloat = 64
@@ -30,6 +32,7 @@ struct AnswerSlot: View {
                 .minimumScaleFactor(0.5)
                 .padding(.horizontal, narrow ? 3 : (compact ? 6 : 10))
                 .frame(minWidth: narrow ? minWidth * 0.6 : (compact ? minWidth * 0.75 : minWidth),
+                       maxWidth: expands ? .infinity : nil,
                        minHeight: max(minHeight, Theme.minTouch))
                 .background(fill, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .overlay {

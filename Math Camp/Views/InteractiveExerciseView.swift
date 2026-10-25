@@ -252,7 +252,7 @@ struct InteractiveExerciseView: View {
                 if let gap = cell.gap {
                     AnswerSlot(text: formatter.display(slot: session.slots[index][gap]),
                                isActive: !session.isChecked && session.activeSlot == gap,
-                               isCorrect: result, font: Theme.font(.title), compact: true) {
+                               isCorrect: result, font: Theme.font(.title), compact: true, expands: true) {
                         session.select(exercise: index, slot: gap)
                     }
                 } else if let term = cell.term {
