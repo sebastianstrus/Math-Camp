@@ -18,6 +18,10 @@ struct SettingsView: View {
     @Environment(PremiumAccess.self) private var premium
     @Environment(LanguageManager.self) private var language
     @State private var showPaywall = false
+    @State private var reminder = ReminderManager.shared
+    @State private var showReminderDenied = false
+    @Environment(\.openURL) private var openURL
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         ScrollView {
@@ -43,6 +47,8 @@ struct SettingsView: View {
                         }
                 }
 
+                reminderRows
+
                 row(icon: "globe", titleKey: "settings.language", tint: Theme.purple) {
                     languageMenu
                 }
@@ -64,6 +70,48 @@ struct SettingsView: View {
         .navigationBarTitleDisplayMode(.large)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .fullScreenCover(isPresented: $showPaywall) { PaywallView() }
+        .alert("reminder.denied.title", isPresented: $showReminderDenied) {
+            Button("reminder.denied.openSettings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+            }
+            Button("reminder.denied.cancel", role: .cancel) {}
+        } message: {
+            Text("reminder.denied.message")
+        }
+        .task { await reminder.refresh() }
+        .onChange(of: scenePhase) { _, phase in
+            // The user may have changed the permission in system Settings.
+            if phase == .active { Task { await reminder.refresh() } }
+        }
+    }
+
+    /// The on/off switch and, while it is on, the time picker.
+    @ViewBuilder
+    private var reminderRows: some View {
+        row(icon: "bell.fill", titleKey: "settings.reminder", tint: Theme.yellow) {
+            Toggle("settings.reminder", isOn: Binding(
+                get: { reminder.isEnabled },
+                set: { isOn in
+                    if isOn {
+                        Task { if await reminder.enable() == .denied { showReminderDenied = true } }
+                    } else {
+                        reminder.disable()
+                    }
+                }
+            ))
+            .labelsHidden()
+            .tint(Theme.correct)
+        }
+
+        if reminder.isEnabled {
+            row(icon: "clock.fill", titleKey: "settings.reminder.time", tint: Theme.blue) {
+                DatePicker("settings.reminder.time", selection: Binding(
+                    get: { reminder.time },
+                    set: { date in Task { await reminder.setTime(date) } }
+                ), displayedComponents: .hourAndMinute)
+                .labelsHidden()
+            }
+        }
     }
 
     /// Marketing version and build number, e.g. "1.0 (3)".
