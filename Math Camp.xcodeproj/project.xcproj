@@ -50,6 +50,7 @@
       ],
     },
     { "kind": "folder", "path": "MathCampTests", "target-membership": [ "MathCampTests" ] },
+    { "path": "privacy.html" },
   ],
   "targets": [
     {
