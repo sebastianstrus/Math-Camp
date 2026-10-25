@@ -161,6 +161,14 @@ struct PaywallView: View {
             .font(Theme.font(.subheadline))
             .foregroundStyle(Theme.textSecondary)
             .frame(minHeight: isCompact ? 40 : Theme.minTouch)
+
+        HStack(spacing: 16) {
+            Link("legal.terms", destination: LegalLinks.terms)
+            Link("legal.privacy", destination: LegalLinks.privacy)
+        }
+        .font(Theme.font(.footnote))
+        .foregroundStyle(Theme.textSecondary)
+        .multilineTextAlignment(.center)
     }
 
     private func plan(_ product: Product) -> some View {

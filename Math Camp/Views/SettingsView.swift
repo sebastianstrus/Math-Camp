@@ -5,6 +5,12 @@
 
 import SwiftUI
 
+/// Legal pages required by the App Store.
+enum LegalLinks {
+    static let terms = URL(string: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula")!
+    static let privacy = URL(string: "https://sebastianstrus.com/documents/math-camp/privacy-policy.html")!
+}
+
 /// Sound, language and a way to the statistics.
 struct SettingsView: View {
     /// Read by `SoundManager` before every sound.
@@ -40,6 +46,9 @@ struct SettingsView: View {
                 row(icon: "globe", titleKey: "settings.language", tint: Theme.purple) {
                     languageMenu
                 }
+
+                linkRow(icon: "doc.text.fill", titleKey: "legal.terms", tint: Theme.blue, url: LegalLinks.terms)
+                linkRow(icon: "hand.raised.fill", titleKey: "legal.privacy", tint: Theme.correct, url: LegalLinks.privacy)
             }
             .padding(20)
             .readableContent()
@@ -100,6 +109,18 @@ struct SettingsView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+
+    /// A row that opens a web page in the browser.
+    private func linkRow(icon: String, titleKey: LocalizedStringKey, tint: Color, url: URL) -> some View {
+        Link(destination: url) {
+            row(icon: icon, titleKey: titleKey, tint: tint) {
+                Image(systemName: "arrow.up.right")
+                    .font(Theme.font(.subheadline))
+                    .foregroundStyle(Theme.textSecondary)
+            }
+        }
+        .buttonStyle(.plain)
     }
 
     private func row<Trailing: View>(icon: String, titleKey: LocalizedStringKey, tint: Color,
