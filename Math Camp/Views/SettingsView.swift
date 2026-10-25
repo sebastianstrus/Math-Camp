@@ -49,6 +49,12 @@ struct SettingsView: View {
 
                 linkRow(icon: "doc.text.fill", titleKey: "legal.terms", tint: Theme.blue, url: LegalLinks.terms)
                 linkRow(icon: "hand.raised.fill", titleKey: "legal.privacy", tint: Theme.correct, url: LegalLinks.privacy)
+
+                Text(verbatim: appVersion)
+                    .font(Theme.font(.footnote))
+                    .foregroundStyle(Theme.textSecondary)
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 6)
             }
             .padding(20)
             .readableContent()
@@ -58,6 +64,14 @@ struct SettingsView: View {
         .navigationBarTitleDisplayMode(.large)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .fullScreenCover(isPresented: $showPaywall) { PaywallView() }
+    }
+
+    /// Marketing version and build number, e.g. "1.0 (3)".
+    private var appVersion: String {
+        let info = Bundle.main.infoDictionary
+        let version = info?["CFBundleShortVersionString"] as? String ?? "?"
+        let build = info?["CFBundleVersion"] as? String ?? "?"
+        return "\(version) (\(build))"
     }
 
     /// Switches the app language on the spot; the whole UI re-renders, nothing restarts.
