@@ -62,6 +62,7 @@ final class SoundManager {
     private var pool: [SoundEffect: [AVAudioPlayer]] = [:]
     private var isSessionConfigured = false
     private var sessionTask: Task<Void, Never>?
+    private var isSessionReady = false
 
     private let engine = AVAudioEngine()
     private var buffers: [SoundEffect: AVAudioPCMBuffer] = [:]
@@ -95,6 +96,7 @@ final class SoundManager {
     func play(_ effect: SoundEffect) {
         guard isEnabled else { return }
         configureSession()
+        guard runWhenSessionReady({ [self] in play(effect) }) else { return }
         let players = players(for: effect)
         // A free voice, or the oldest one restarted when all are busy.
         guard let player = players.first(where: { !$0.isPlaying }) ?? players.first else { return }
@@ -106,6 +108,7 @@ final class SoundManager {
     func play(_ effect: SoundEffect, pitchCents: Float) {
         guard isEnabled else { return }
         configureSession()
+        guard runWhenSessionReady({ [self] in play(effect, pitchCents: pitchCents) }) else { return }
         guard let buffer = buffer(for: effect),
               let voice = voice(for: effect, cents: pitchCents, format: buffer.format) else { return }
 
@@ -164,17 +167,32 @@ final class SoundManager {
         guard !isSessionConfigured else { return }
         isSessionConfigured = true
         // Category and activation can block, so keep them off the main thread.
-        sessionTask = Task.detached(priority: .userInitiated) {
-            do {
-                let session = AVAudioSession.sharedInstance()
-                try session.setCategory(.ambient, mode: .default)
-                try session.setActive(true)
-            } catch {
-                #if DEBUG
-                print("SoundManager: audio session failed: \(error)")
-                #endif
-            }
+        sessionTask = Task {
+            await Task.detached(priority: .userInitiated) {
+                do {
+                    let session = AVAudioSession.sharedInstance()
+                    try session.setCategory(.ambient, mode: .default)
+                    try session.setActive(true)
+                } catch {
+                    #if DEBUG
+                    print("SoundManager: audio session failed: \(error)")
+                    #endif
+                }
+            }.value
+            isSessionReady = true
         }
+    }
+
+    /// Players and the engine activate an inactive session on the main thread, so nothing
+    /// may touch them until the session has been set up in the background.
+    /// Returns `false` (and replays `action` once the session is ready) if it isn't yet.
+    private func runWhenSessionReady(_ action: @escaping @MainActor () -> Void) -> Bool {
+        guard !isSessionReady else { return true }
+        Task {
+            await sessionTask?.value
+            action()
+        }
+        return false
     }
 
     private func players(for effect: SoundEffect) -> [AVAudioPlayer] {
