@@ -57,6 +57,18 @@ struct TaskView: View {
         .navigationTitle(Text(LocalizedStringKey(category.titleKey)))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarColorScheme(.dark, for: .navigationBar)
+        // Hiding the system back button also disables the edge-swipe back gesture,
+        // so progress can't be lost by accident. The custom button replaces it.
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .fontWeight(.semibold)
+                }
+                .accessibilityLabel(Text("Back"))
+            }
+        }
         .fullScreenCover(isPresented: $showPremium) { PaywallView() }
         .sensoryFeedback(.success, trigger: session.isChecked) { _, checked in checked && session.stars >= 2 }
         .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { screenHeight = $0 }

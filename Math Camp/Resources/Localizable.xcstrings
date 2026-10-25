@@ -146,6 +146,9 @@
         }
       }
     },
+    "Back" : {
+
+    },
     "calendar.q.daysInMonth" : {
       "extractionState" : "manual",
       "localizations" : {
