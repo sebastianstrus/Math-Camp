@@ -22,6 +22,8 @@ final class ReminderManager {
         case enabled
         /// Notifications are blocked in Settings; the system will not ask again.
         case denied
+        /// The user just declined the system prompt; no need to explain anything yet.
+        case declinedPrompt
     }
 
     private(set) var isEnabled: Bool
@@ -54,7 +56,7 @@ final class ReminderManager {
             let granted = (try? await center.requestAuthorization(options: [.alert, .sound])) ?? false
             guard granted else {
                 setEnabled(false)
-                return .denied
+                return .declinedPrompt
             }
         default:
             break
