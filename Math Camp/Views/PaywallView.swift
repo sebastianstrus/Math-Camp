@@ -43,7 +43,7 @@ struct PaywallView: View {
                         offer
                     }
                 }
-                .padding(isCompact ? 20 : 24)
+                .padding(18)
                 .frame(maxWidth: 520)
                 .frame(maxWidth: .infinity)
             }
