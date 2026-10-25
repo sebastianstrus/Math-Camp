@@ -85,33 +85,38 @@ struct SettingsView: View {
         }
     }
 
-    /// The on/off switch and, while it is on, the time picker.
-    @ViewBuilder
+    /// One card holding the on/off switch; the time picker expands below it while it is on.
     private var reminderRows: some View {
-        row(icon: "bell.fill", titleKey: "settings.reminder", tint: Theme.yellow) {
-            Toggle("settings.reminder", isOn: Binding(
-                get: { reminder.isEnabled },
-                set: { isOn in
-                    if isOn {
-                        Task { if await reminder.enable() == .denied { showReminderDenied = true } }
-                    } else {
-                        reminder.disable()
+        VStack(spacing: 0) {
+            rowContent(icon: "bell.fill", titleKey: "settings.reminder", tint: Theme.yellow) {
+                Toggle("settings.reminder", isOn: Binding(
+                    get: { reminder.isEnabled },
+                    set: { isOn in
+                        if isOn {
+                            Task { if await reminder.enable() == .denied { showReminderDenied = true } }
+                        } else {
+                            reminder.disable()
+                        }
                     }
-                }
-            ))
-            .labelsHidden()
-            .tint(Theme.correct)
-        }
-
-        if reminder.isEnabled {
-            row(icon: "clock.fill", titleKey: "settings.reminder.time", tint: Theme.blue) {
-                DatePicker("settings.reminder.time", selection: Binding(
-                    get: { reminder.time },
-                    set: { date in Task { await reminder.setTime(date) } }
-                ), displayedComponents: .hourAndMinute)
+                ))
                 .labelsHidden()
+                .tint(Theme.correct)
+            }
+
+            if reminder.isEnabled {
+                rowContent(icon: "clock.fill", titleKey: "settings.reminder.time", tint: Theme.blue) {
+                    DatePicker("settings.reminder.time", selection: Binding(
+                        get: { reminder.time },
+                        set: { date in Task { await reminder.setTime(date) } }
+                    ), displayedComponents: .hourAndMinute)
+                    .labelsHidden()
+                }
+                .transition(.opacity.combined(with: .move(edge: .top)))
             }
         }
+        .themeCard()
+        .clipped()
+        .animation(.spring(duration: 0.4, bounce: 0.15), value: reminder.isEnabled)
     }
 
     /// Marketing version and build number, e.g. "1.0 (3)".
@@ -187,6 +192,14 @@ struct SettingsView: View {
 
     private func row<Trailing: View>(icon: String, titleKey: LocalizedStringKey, tint: Color,
                                      @ViewBuilder trailing: () -> Trailing) -> some View {
+        rowContent(icon: icon, titleKey: titleKey, tint: tint, trailing: trailing)
+            .themeCard()
+            .contentShape(Rectangle())
+    }
+
+    /// The row layout without the card background, so several rows can share one card.
+    private func rowContent<Trailing: View>(icon: String, titleKey: LocalizedStringKey, tint: Color,
+                                            @ViewBuilder trailing: () -> Trailing) -> some View {
         HStack(spacing: 14) {
             Image(systemName: icon)
                 .font(.title3)
@@ -202,7 +215,5 @@ struct SettingsView: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity, minHeight: 72, alignment: .leading)
-        .themeCard()
-        .contentShape(Rectangle())
     }
 }
