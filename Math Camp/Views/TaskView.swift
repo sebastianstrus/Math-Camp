@@ -130,6 +130,8 @@ struct TaskView: View {
                             .id(index)
                             .transition(.opacity)
                             .environment(\.exerciseArea, proxy.size)
+                            // Centered between the progress bar and the keypad; taller content still scrolls.
+                            .frame(maxWidth: .infinity, minHeight: proxy.size.height, alignment: .center)
                     }
                 }
                 .scrollBounceBehavior(.basedOnSize)
