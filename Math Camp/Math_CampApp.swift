@@ -11,6 +11,7 @@ import SwiftData
 @main
 struct Math_CampApp: App {
     @State private var premium = PremiumAccess()
+    @State private var language = LanguageManager.shared
     @Environment(\.scenePhase) private var scenePhase
 
     init() {
@@ -24,6 +25,8 @@ struct Math_CampApp: App {
         WindowGroup {
             RootView()
                 .environment(premium)
+                .environment(language)
+                .environment(\.locale, language.locale)
                 .preferredColorScheme(.dark)
                 .onChange(of: scenePhase) { _, phase in
                     if phase == .active { Task { await premium.refreshEntitlements() } }

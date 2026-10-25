@@ -103,7 +103,7 @@ final class PremiumAccess {
                 break
             }
         } catch {
-            errorMessage = String(localized: "paywall.error.purchase")
+            errorMessage = L10n.string("paywall.error.purchase")
         }
     }
 
@@ -113,9 +113,9 @@ final class PremiumAccess {
         do {
             try await AppStore.sync()
             await refreshEntitlements()
-            if !isPremium { errorMessage = String(localized: "paywall.error.nothingToRestore") }
+            if !isPremium { errorMessage = L10n.string("paywall.error.nothingToRestore") }
         } catch {
-            errorMessage = String(localized: "paywall.error.restore")
+            errorMessage = L10n.string("paywall.error.restore")
         }
     }
 
@@ -123,7 +123,7 @@ final class PremiumAccess {
 
     private func handle(_ result: VerificationResult<Transaction>) async {
         guard case .verified(let transaction) = result else {
-            errorMessage = String(localized: "paywall.error.verification")
+            errorMessage = L10n.string("paywall.error.verification")
             return
         }
         await transaction.finish()

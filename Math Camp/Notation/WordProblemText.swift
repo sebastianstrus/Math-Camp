@@ -19,6 +19,6 @@ nonisolated enum WordProblemText {
             default: values[String(letter)] ?? 0
             }
         }
-        return String(format: L10n.string("wp.\(templateID)"), locale: .current, arguments: arguments)
+        return String(format: L10n.string("wp.\(templateID)"), locale: LanguageManager.activeLocale, arguments: arguments)
     }
 }

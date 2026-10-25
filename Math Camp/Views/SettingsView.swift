@@ -10,6 +10,7 @@ struct SettingsView: View {
     /// Read by `SoundManager` before every sound.
     @AppStorage(SoundManager.enabledKey) private var soundEnabled = true
     @Environment(PremiumAccess.self) private var premium
+    @Environment(LanguageManager.self) private var language
     @State private var showPaywall = false
 
     var body: some View {
@@ -36,17 +37,9 @@ struct SettingsView: View {
                         }
                 }
 
-                // Placeholder until more languages are supported.
                 row(icon: "globe", titleKey: "settings.language", tint: Theme.purple) {
-                    Text("common.comingSoon")
-                        .font(Theme.font(.footnote))
-                        .foregroundStyle(Theme.textPrimary)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 6)
-                        .background(Color.white.opacity(0.14), in: Capsule())
+                    languageMenu
                 }
-                .opacity(0.65)
-                .accessibilityElement(children: .combine)
             }
             .padding(20)
             .readableContent()
@@ -56,6 +49,37 @@ struct SettingsView: View {
         .navigationBarTitleDisplayMode(.large)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .fullScreenCover(isPresented: $showPaywall) { PaywallView() }
+    }
+
+    /// Switches the app language on the spot; the whole UI re-renders, nothing restarts.
+    private var languageMenu: some View {
+        @Bindable var language = language
+        return Menu {
+            Picker("settings.language", selection: $language.selection) {
+                ForEach(AppLanguage.allCases) { option in
+                    if let name = option.nativeName {
+                        Text(verbatim: name).tag(option)
+                    } else {
+                        Text("settings.language.system").tag(option)
+                    }
+                }
+            }
+        } label: {
+            HStack(spacing: 6) {
+                if let name = language.selection.nativeName {
+                    Text(verbatim: name)
+                } else {
+                    Text("settings.language.system")
+                }
+                Image(systemName: "chevron.up.chevron.down")
+                    .font(Theme.font(.caption))
+            }
+            .font(Theme.font(.footnote))
+            .foregroundStyle(Theme.textPrimary)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(Color.white.opacity(0.14), in: Capsule())
+        }
     }
 
     /// Shows whether Premium is active. When it is not, the row opens the paywall.

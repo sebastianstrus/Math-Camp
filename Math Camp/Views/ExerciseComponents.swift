@@ -269,8 +269,8 @@ struct ExerciseRow: View {
 
     private var accessibilityValue: String {
         guard let result else { return "" }
-        if result { return String(localized: "task.accessibility.correct") }
-        let answer = String(localized: "task.correctAnswer \(formatter.display(answer: exercise.answer))")
-        return String(localized: "task.accessibility.wrong") + ". " + answer
+        if result { return L10n.string("task.accessibility.correct") }
+        let answer = String(localized: "task.correctAnswer \(formatter.display(answer: exercise.answer))", bundle: LanguageManager.bundle, locale: formatter.locale)
+        return L10n.string("task.accessibility.wrong") + ". " + answer
     }
 }
