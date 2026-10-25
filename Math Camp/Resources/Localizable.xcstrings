@@ -23096,67 +23096,67 @@
         "de" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Aufgaben 1–10 · leichte Zahlen"
+            "value" : "Aufgaben 1–16 · leichte Zahlen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tasks 1–10 · easy numbers"
+            "value" : "Tasks 1–16 · easy numbers"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tareas 1–10 · números fáciles"
+            "value" : "Tareas 1–16 · números fáciles"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tâches 1–10 · nombres faciles"
+            "value" : "Tâches 1–16 · nombres faciles"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Esercizi 1–10 · numeri facili"
+            "value" : "Esercizi 1–16 · numeri facili"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "1〜10問目 · かんたんな数"
+            "value" : "1〜16問目 · かんたんな数"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Oppgave 1–10 · enkle tall"
+            "value" : "Oppgave 1–16 · enkle tall"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Zadania 1–10 · łatwe liczby"
+            "value" : "Zadania 1–16 · łatwe liczby"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tarefas 1–10 · números fáceis"
+            "value" : "Tarefas 1–16 · números fáceis"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Uppgift 1–10 · lätta tal"
+            "value" : "Uppgift 1–16 · lätta tal"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Завдання 1–10 · легкі числа"
+            "value" : "Завдання 1–16 · легкі числа"
           }
         }
       }
@@ -23238,67 +23238,67 @@
         "de" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Aufgaben 21–30 · die schwersten Fälle"
+            "value" : "Aufgaben 33–48 · die schwersten Fälle"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tasks 21–30 · the hardest cases"
+            "value" : "Tasks 33–48 · the hardest cases"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tareas 21–30 · los casos más difíciles"
+            "value" : "Tareas 33–48 · los casos más difíciles"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tâches 21–30 · les cas les plus difficiles"
+            "value" : "Tâches 33–48 · les cas les plus difficiles"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Esercizi 21–30 · i casi più difficili"
+            "value" : "Esercizi 33–48 · i casi più difficili"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "21〜30問目 · いちばんむずかしい問題"
+            "value" : "33〜48問目 · いちばんむずかしい問題"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Oppgave 21–30 · de vanskeligste tilfellene"
+            "value" : "Oppgave 33–48 · de vanskeligste tilfellene"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Zadania 21–30 · najtrudniejsze przypadki"
+            "value" : "Zadania 33–48 · najtrudniejsze przypadki"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tarefas 21–30 · os casos mais difíceis"
+            "value" : "Tarefas 33–48 · os casos mais difíceis"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Uppgift 21–30 · de svåraste fallen"
+            "value" : "Uppgift 33–48 · de svåraste fallen"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Завдання 21–30 · найважчі випадки"
+            "value" : "Завдання 33–48 · найважчі випадки"
           }
         }
       }
@@ -23380,67 +23380,67 @@
         "de" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Aufgaben 11–20 · alles dabei"
+            "value" : "Aufgaben 17–32 · alles dabei"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tasks 11–20 · the full range"
+            "value" : "Tasks 17–32 · the full range"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tareas 11–20 · de todo un poco"
+            "value" : "Tareas 17–32 · de todo un poco"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tâches 11–20 · de tout un peu"
+            "value" : "Tâches 17–32 · de tout un peu"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Esercizi 11–20 · un po' di tutto"
+            "value" : "Esercizi 17–32 · un po' di tutto"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "11〜20問目 · すべてのはんい"
+            "value" : "17〜32問目 · すべてのはんい"
           }
         },
         "nb" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Oppgave 11–20 · alle slags tall"
+            "value" : "Oppgave 17–32 · alle slags tall"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Zadania 11–20 · pełny zakres"
+            "value" : "Zadania 17–32 · pełny zakres"
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Tarefas 11–20 · de tudo um pouco"
+            "value" : "Tarefas 17–32 · de tudo um pouco"
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Uppgift 11–20 · lite av varje"
+            "value" : "Uppgift 17–32 · lite av varje"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Завдання 11–20 · усі рівні складності"
+            "value" : "Завдання 17–32 · усі рівні складності"
           }
         }
       }
