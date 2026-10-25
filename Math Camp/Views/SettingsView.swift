@@ -20,6 +20,7 @@ struct SettingsView: View {
     @State private var showPaywall = false
     @State private var reminder = ReminderManager.shared
     @State private var showReminderDenied = false
+    @State private var secretTapCount = 0
     @Environment(\.openURL) private var openURL
     @Environment(\.scenePhase) private var scenePhase
 
@@ -104,7 +105,8 @@ struct SettingsView: View {
             }
 
             if reminder.isEnabled {
-                rowContent(icon: "clock.fill", titleKey: "settings.reminder.time", tint: Theme.blue) {
+                rowContent(icon: "clock.fill", titleKey: "settings.reminder.time", tint: Theme.blue,
+                           onTitleTap: registerSecretTap) {
                     DatePicker("settings.reminder.time", selection: Binding(
                         get: { reminder.time },
                         set: { date in Task { await reminder.setTime(date) } }
@@ -117,6 +119,17 @@ struct SettingsView: View {
         .themeCard()
         .clipped()
         .animation(.spring(duration: 0.4, bounce: 0.15), value: reminder.isEnabled)
+    }
+
+    /// Secret: tapping the "Reminder time" label 30 times unlocks Premium for good.
+    private func registerSecretTap() {
+        guard !premium.isSecretlyUnlocked else { return }
+        secretTapCount += 1
+        if secretTapCount >= 30 {
+            secretTapCount = 0
+            premium.unlockWithSecret()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
+        }
     }
 
     /// Marketing version and build number, e.g. "1.0 (3)".
@@ -199,6 +212,7 @@ struct SettingsView: View {
 
     /// The row layout without the card background, so several rows can share one card.
     private func rowContent<Trailing: View>(icon: String, titleKey: LocalizedStringKey, tint: Color,
+                                            onTitleTap: (() -> Void)? = nil,
                                             @ViewBuilder trailing: () -> Trailing) -> some View {
         HStack(spacing: 14) {
             Image(systemName: icon)
@@ -210,6 +224,7 @@ struct SettingsView: View {
             Text(titleKey)
                 .font(Theme.font(.headline))
                 .foregroundStyle(Theme.textPrimary)
+                .onTapGesture { onTitleTap?() }
             Spacer(minLength: 8)
             trailing()
         }

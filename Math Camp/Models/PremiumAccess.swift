@@ -28,7 +28,13 @@ final class PremiumAccess {
         case failed
     }
 
-    private(set) var isPremium = false
+    /// Premium comes from a purchase or from the secret unlock (see `unlockWithSecret`).
+    var isPremium: Bool { hasPurchased || isSecretlyUnlocked }
+    /// Whether StoreKit reports an entitlement.
+    private(set) var hasPurchased = false
+    /// Set by the hidden gesture in Settings, stored between launches.
+    private(set) var isSecretlyUnlocked = UserDefaults.standard.bool(forKey: PremiumAccess.secretKey)
+    private static let secretKey = "premium.secretUnlock"
     /// Monthly, yearly, lifetime (in this order; missing products are left out).
     private(set) var products: [Product] = []
     private(set) var loadState = LoadState.idle
@@ -70,6 +76,12 @@ final class PremiumAccess {
         if debugUnlockAll { return true }
         #endif
         return isPremium || category.isFree(taskNumber: taskNumber)
+    }
+
+    /// Hidden unlock for friends, kept forever on this device.
+    func unlockWithSecret() {
+        UserDefaults.standard.set(true, forKey: Self.secretKey)
+        isSecretlyUnlocked = true
     }
 
     // MARK: Products
@@ -129,7 +141,7 @@ final class PremiumAccess {
         await transaction.finish()
         await refreshEntitlements()
         // A just-verified purchase counts even if `currentEntitlements` has not caught up yet.
-        if !isPremium, isEntitling(transaction) { isPremium = true }
+        if !hasPurchased, isEntitling(transaction) { hasPurchased = true }
     }
 
     private func isEntitling(_ transaction: Transaction) -> Bool {
@@ -158,6 +170,6 @@ final class PremiumAccess {
                 }
             }
         }
-        isPremium = premium
+        hasPurchased = premium
     }
 }
