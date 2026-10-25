@@ -68,7 +68,7 @@ final class SoundManager {
     private var buffers: [SoundEffect: AVAudioPCMBuffer] = [:]
     private var pitchedVoices: [VoiceKey: PitchedVoice] = [:]
 
-    private static let fileExtensions = ["caf", "wav", "m4a", "mp3"]
+    private nonisolated static let fileExtensions = ["caf", "wav", "m4a", "mp3"]
 
     private init() {}
 
@@ -82,7 +82,7 @@ final class SoundManager {
         Task {
             // Players would activate the session on the main thread if it isn't active yet.
             await sessionTask?.value
-            for effect in SoundEffect.allCases where effect != .star { _ = players(for: effect) }
+            for effect in SoundEffect.allCases where effect != .star { await preloadPlayers(for: effect) }
             _ = buffer(for: .star)
         }
     }
@@ -124,7 +124,7 @@ final class SoundManager {
 
     // MARK: Private
 
-    private static func url(for effect: SoundEffect) -> URL? {
+    private nonisolated static func url(for effect: SoundEffect) -> URL? {
         fileExtensions.lazy
             .compactMap { Bundle.main.url(forResource: effect.rawValue, withExtension: $0) }.first
     }
@@ -197,13 +197,28 @@ final class SoundManager {
 
     private func players(for effect: SoundEffect) -> [AVAudioPlayer] {
         if let cached = pool[effect] { return cached }
+        // Not preloaded yet: build without `prepareToPlay`, which can block on the main thread.
+        let players = Self.makePlayers(for: effect, prepare: false)
+        pool[effect] = players
+        return players
+    }
 
+    /// Loads the players of `effect` on a background thread, where `prepareToPlay` may block safely.
+    private func preloadPlayers(for effect: SoundEffect) async {
+        guard pool[effect] == nil else { return }
+        let players = await Task.detached(priority: .userInitiated) {
+            Self.makePlayers(for: effect, prepare: true)
+        }.value
+        if pool[effect] == nil { pool[effect] = players }
+    }
+
+    private nonisolated static func makePlayers(for effect: SoundEffect, prepare: Bool) -> [AVAudioPlayer] {
         var players: [AVAudioPlayer] = []
-        if let url = Self.url(for: effect) {
+        if let url = url(for: effect) {
             for _ in 0..<effect.voices {
                 guard let player = try? AVAudioPlayer(contentsOf: url) else { break }
                 player.volume = effect.volume
-                player.prepareToPlay()
+                if prepare { player.prepareToPlay() }
                 players.append(player)
             }
         } else {
@@ -211,7 +226,6 @@ final class SoundManager {
             print("SoundManager: missing sound file \"\(effect.rawValue)\"")
             #endif
         }
-        pool[effect] = players
         return players
     }
 }
