@@ -15799,31 +15799,31 @@
         "de" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Jede Kategorie hat 30 Aufgaben. Aufwärmen ist leicht, Aufstieg bietet alles und Gipfel ist am schwersten."
+            "value" : "Jede Kategorie hat 48 Aufgaben. Aufwärmen ist leicht, Aufstieg bietet alles und Gipfel ist am schwersten."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Every category has 30 tasks. Warm-up is easy, Climb is the full range and Peak is the hardest."
+            "value" : "Every category has 48 tasks. Warm-up is easy, Climb is the full range and Peak is the hardest."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Cada categoría tiene 30 tareas. Calentamiento es fácil, Ascenso incluye de todo y Cima es lo más difícil."
+            "value" : "Cada categoría tiene 48 tareas. Calentamiento es fácil, Ascenso incluye de todo y Cima es lo más difícil."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Chaque catégorie a 30 tâches. Échauffement est facile, Ascension couvre tout et Sommet est le plus difficile."
+            "value" : "Chaque catégorie a 48 tâches. Échauffement est facile, Ascension couvre tout et Sommet est le plus difficile."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Ogni categoria ha 30 compiti. Riscaldamento è facile, Salita comprende tutto e Vetta è la più difficile."
+            "value" : "Ogni categoria ha 48 compiti. Riscaldamento è facile, Salita comprende tutto e Vetta è la più difficile."
           }
         },
         "ja" : {
@@ -15835,31 +15835,31 @@
         "nb" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Hver kategori har 30 oppgaver. Oppvarming er lett, Klatring har alle slags tall og Toppen er det vanskeligste."
+            "value" : "Hver kategori har 48 oppgaver. Oppvarming er lett, Klatring har alle slags tall og Toppen er det vanskeligste."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Każda kategoria ma 30 zadań. Rozgrzewka jest łatwa, Wspinaczka obejmuje pełny zakres, a Szczyt jest najtrudniejszy."
+            "value" : "Każda kategoria ma 48 zadań. Rozgrzewka jest łatwa, Wspinaczka obejmuje pełny zakres, a Szczyt jest najtrudniejszy."
           }
         },
         "pt-BR" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Cada categoria tem 30 tarefas. Aquecimento é fácil, Subida tem de tudo um pouco e Pico é o mais difícil."
+            "value" : "Cada categoria tem 48 tarefas. Aquecimento é fácil, Subida tem de tudo um pouco e Pico é o mais difícil."
           }
         },
         "sv" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "Varje kategori har 30 uppgifter. Uppvärmning är lätt, Klättring har allt och Topp är svårast."
+            "value" : "Varje kategori har 48 uppgifter. Uppvärmning är lätt, Klättring har allt och Topp är svårast."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "machine_translated",
-            "value" : "У кожній категорії по 30 завдань. Розминка — легка, Підйом — усі рівні складності, а Вершина — найважча."
+            "value" : "У кожній категорії по 48 завдань. Розминка — легка, Підйом — усі рівні складності, а Вершина — найважча."
           }
         }
       }

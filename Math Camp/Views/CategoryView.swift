@@ -6,13 +6,16 @@
 import SwiftUI
 import SwiftData
 
-/// The 30 tasks of a category in three groups: Warm-up, Climb, Peak.
+/// The 48 tasks of a category in three groups: Warm-up, Climb, Peak.
 struct CategoryView: View {
     let category: Category
 
     @Query private var results: [TaskResult]
     @Environment(PremiumAccess.self) private var premium
     @State private var showPremium = false
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    private var columnCount: Int { horizontalSizeClass == .regular ? 8 : 4 }
 
     private var accent: Color {
         ContentCatalog.section(id: category.sectionID).map { Theme.accent(for: $0) } ?? Theme.orange
@@ -94,7 +97,8 @@ struct CategoryView: View {
             .accessibilityElement(children: .combine)
             .accessibilityAddTraits(.isHeader)
 
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 72), spacing: 10)], spacing: 10) {
+            // 16 tasks per tier: 4x4 on iPhone, 2x8 on iPad.
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: columnCount), spacing: 10) {
                 ForEach(Array(tier.taskNumbers), id: \.self) { number in
                     let result = progress.result(categoryID: category.id, taskNumber: number)
                     let isLocked = !premium.isUnlocked(category, taskNumber: number)

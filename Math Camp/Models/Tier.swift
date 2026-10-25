@@ -5,18 +5,18 @@
 
 import Foundation
 
-/// Difficulty band inside a category: tasks 1–10, 11–20, 21–30.
+/// Difficulty band inside a category: tasks 1–16, 17–32, 33–48.
 nonisolated enum Tier: Int, CaseIterable, Identifiable, Hashable, Sendable {
     case easy, medium, hard
 
-    static let tasksPerTier = 10
+    static let tasksPerTier = 16
 
     var id: Int { rawValue }
 
     static func tier(forTask taskNumber: Int) -> Tier {
         switch taskNumber {
-        case ...10: .easy
-        case 11...20: .medium
+        case ...16: .easy
+        case 17...32: .medium
         default: .hard
         }
     }

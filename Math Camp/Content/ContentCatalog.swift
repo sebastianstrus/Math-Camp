@@ -8,8 +8,8 @@
 import Foundation
 
 nonisolated enum ContentCatalog {
-    /// Every category has exactly this many tasks (10 Warm-up, 10 Climb, 10 Peak).
-    static let tasksPerCategory = 30
+    /// Every category has exactly this many tasks (16 Warm-up, 16 Climb, 16 Peak).
+    static let tasksPerCategory = 48
 
     static let sections: [CampSection] = [section1, section2, section3, section4, section5, section6, section7]
 

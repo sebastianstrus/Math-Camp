@@ -37,11 +37,11 @@ struct GeneratorFoundationTests {
 
     @Test func tiersFollowTheTaskNumber() {
         #expect(Tier.tier(forTask: 1) == .easy)
-        #expect(Tier.tier(forTask: 10) == .easy)
-        #expect(Tier.tier(forTask: 11) == .medium)
-        #expect(Tier.tier(forTask: 21) == .hard)
+        #expect(Tier.tier(forTask: 16) == .easy)
+        #expect(Tier.tier(forTask: 17) == .medium)
+        #expect(Tier.tier(forTask: 33) == .hard)
         #expect(Tier.difficulty(forTask: 1) == 0)
-        #expect(Tier.difficulty(forTask: 10) == 1)
+        #expect(Tier.difficulty(forTask: 16) == 1)
     }
 }
 
@@ -70,7 +70,7 @@ struct CurriculumValidationTests {
 
     @Test func freeTasksFollowTheRules() throws {
         let sectionI = try #require(ContentCatalog.category(id: "s1.add10"))
-        #expect((1...30).allSatisfy { sectionI.isFree(taskNumber: $0) })
+        #expect((1...48).allSatisfy { sectionI.isFree(taskNumber: $0) })
         let sectionII = try #require(ContentCatalog.category(id: "s2.addregroup"))
         #expect(sectionII.isFree(taskNumber: 3))
         #expect(!sectionII.isFree(taskNumber: 4))
