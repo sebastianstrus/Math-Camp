@@ -61,6 +61,7 @@ final class SoundManager {
 
     private var pool: [SoundEffect: [AVAudioPlayer]] = [:]
     private var isSessionConfigured = false
+    private var sessionTask: Task<Void, Never>?
 
     private let engine = AVAudioEngine()
     private var buffers: [SoundEffect: AVAudioPCMBuffer] = [:]
@@ -77,8 +78,12 @@ final class SoundManager {
     /// Loads the sounds ahead of time so the first tap has no delay. Call once at launch.
     func prepare() {
         configureSession()
-        for effect in SoundEffect.allCases where effect != .star { _ = players(for: effect) }
-        _ = buffer(for: .star)
+        Task {
+            // Players would activate the session on the main thread if it isn't active yet.
+            await sessionTask?.value
+            for effect in SoundEffect.allCases where effect != .star { _ = players(for: effect) }
+            _ = buffer(for: .star)
+        }
     }
 
     /// Plays the star sound for the 1st, 2nd or 3rd star, each one higher than the last.
@@ -158,13 +163,17 @@ final class SoundManager {
     private func configureSession() {
         guard !isSessionConfigured else { return }
         isSessionConfigured = true
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            #if DEBUG
-            print("SoundManager: audio session failed: \(error)")
-            #endif
+        // Category and activation can block, so keep them off the main thread.
+        sessionTask = Task.detached(priority: .userInitiated) {
+            do {
+                let session = AVAudioSession.sharedInstance()
+                try session.setCategory(.ambient, mode: .default)
+                try session.setActive(true)
+            } catch {
+                #if DEBUG
+                print("SoundManager: audio session failed: \(error)")
+                #endif
+            }
         }
     }
 
