@@ -28,6 +28,7 @@ struct Math_CampApp: App {
                 .environment(language)
                 .environment(\.locale, language.locale)
                 .preferredColorScheme(.dark)
+                .exportProgressOnLaunch() // TEMPORARY, see ProgressTransfer.swift
                 .onChange(of: scenePhase) { _, phase in
                     if phase == .active { Task { await premium.refreshEntitlements() } }
                 }

@@ -54,6 +54,8 @@ struct SettingsView: View {
                     languageMenu
                 }
 
+                ProgressTransferRows() // TEMPORARY, see ProgressTransfer.swift
+
                 linkRow(icon: "doc.text.fill", titleKey: "legal.terms", tint: Theme.blue, url: LegalLinks.terms)
                 linkRow(icon: "hand.raised.fill", titleKey: "legal.privacy", tint: Theme.correct, url: LegalLinks.privacy)
 
