@@ -1,0 +1,173 @@
+[
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:06:28Z",
+    "taskNumber" : 1,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:07:12Z",
+    "taskNumber" : 2,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:07:51Z",
+    "taskNumber" : 3,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 13,
+    "bestStars" : 2,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:08:49Z",
+    "taskNumber" : 4,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:09:34Z",
+    "taskNumber" : 5,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:10:07Z",
+    "taskNumber" : 6,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:10:43Z",
+    "taskNumber" : 7,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:12:17Z",
+    "taskNumber" : 8,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:12:50Z",
+    "taskNumber" : 9,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:14:44Z",
+    "taskNumber" : 10,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:16:44Z",
+    "taskNumber" : 17,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:17:48Z",
+    "taskNumber" : 18,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:19:49Z",
+    "taskNumber" : 33,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:20:55Z",
+    "taskNumber" : 34,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:22:27Z",
+    "taskNumber" : 19,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:23:07Z",
+    "taskNumber" : 20,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:23:47Z",
+    "taskNumber" : 11,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 15,
+    "bestStars" : 3,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:24:24Z",
+    "taskNumber" : 12,
+    "total" : 15
+  },
+  {
+    "attempts" : 1,
+    "bestCorrect" : 11,
+    "bestStars" : 2,
+    "categoryID" : "s1.counting",
+    "lastCompletedAt" : "2026-11-22T17:25:22Z",
+    "taskNumber" : 35,
+    "total" : 15
+  }
+]
